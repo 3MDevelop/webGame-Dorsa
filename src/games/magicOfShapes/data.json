@@ -1,0 +1,80 @@
+﻿{
+  "gameName": "جادوی اشکال",
+  "answerDelay": 1000,
+  "soundLevel": 0.2,
+  "colors": [
+    "#ff0000",
+    "#ffff00",
+    "#ff00ff",
+    "#f5a3b8",
+    "#00ffff",
+    "#0000ff",
+    "#00ff00"
+  ],
+  "shapMax": 4,
+  "gameDef": [
+    {
+      "gameTime": 90,
+      "qMax": 29,
+      "starArr": [20, 23, 26],
+      "passStar": 3,
+      "qType": 1
+    },
+    {
+      "gameTime": 90,
+      "qMax": 32,
+      "starArr": [23, 26, 29],
+      "passStar": 3,
+      "qType": 1
+    },
+    {
+      "gameTime": 90,
+      "qMax": 35,
+      "starArr": [26, 29, 32],
+      "passStar": 3,
+      "qType": 1
+    },
+    {
+      "gameTime": 90,
+      "qMax": 29,
+      "starArr": [20, 23, 26],
+      "passStar": 3,
+      "qType": 2
+    },
+    {
+      "gameTime": 90,
+      "qMax": 32,
+      "starArr": [23, 26, 29],
+      "passStar": 3,
+      "qType": 2
+    },
+    {
+      "gameTime": 90,
+      "qMax": 35,
+      "starArr": [26, 29, 32],
+      "passStar": 3,
+      "qType": 2
+    },
+    {
+      "gameTime": 90,
+      "qMax": 29,
+      "starArr": [20, 23, 26],
+      "passStar": 3,
+      "qType": 3
+    },
+    {
+      "gameTime": 90,
+      "qMax": 32,
+      "starArr": [23, 26, 29],
+      "passStar": 3,
+      "qType": 3
+    },
+    {
+      "gameTime": 90,
+      "qMax": 35,
+      "starArr": [26, 29, 32],
+      "passStar": 3,
+      "qType": 3
+    }
+  ]
+}

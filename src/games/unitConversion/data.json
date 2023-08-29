@@ -1,0 +1,95 @@
+﻿{
+  "gameName": "تبدیل واحد",
+  "answerDelay": 1000,
+  "soundLevel": 0.2,
+  "scaleArr": [
+    ["یارد", 90],
+    ["فوت", 30],
+    ["اینچ", 2.5],
+    ["سانتیمتر", 1],
+    ["میلیمتر", 0.1]
+  ],
+  "gameDef": [
+    {
+      "gameTime": 120,
+      "qMax": 15,
+      "starArr": [5, 8, 11],
+      "passStar": 3,
+      "minCm": 30,
+      "maxCm": 210,
+      "stepCm": 30
+    },
+    {
+      "gameTime": 120,
+      "qMax": 15,
+      "starArr": [5, 8, 11],
+      "passStar": 3,
+      "minCm": 30,
+      "maxCm": 210,
+      "stepCm": 30
+    },
+    {
+      "gameTime": 120,
+      "qMax": 15,
+      "starArr": [5, 8, 11],
+      "passStar": 3,
+      "minCm": 30,
+      "maxCm": 210,
+      "stepCm": 30
+    },
+    {
+      "gameTime": 120,
+      "qMax": 15,
+      "starArr": [5, 8, 11],
+      "passStar": 3,
+      "minCm": 30,
+      "maxCm": 300,
+      "stepCm": 30
+    },
+    {
+      "gameTime": 120,
+      "qMax": 15,
+      "starArr": [5, 8, 11],
+      "passStar": 3,
+      "minCm": 30,
+      "maxCm": 300,
+      "stepCm": 30
+    },
+    {
+      "gameTime": 120,
+      "qMax": 15,
+      "starArr": [5, 8, 11],
+      "passStar": 3,
+      "minCm": 30,
+      "maxCm": 300,
+      "stepCm": 30
+    },
+    {
+      "gameTime": 120,
+      "qMax": 15,
+      "starArr": [5, 8, 11],
+      "passStar": 3,
+      "minCm": 30,
+      "maxCm": 360,
+      "stepCm": 30
+    },
+    {
+      "gameTime": 120,
+      "qMax": 15,
+      "starArr": [5, 8, 11],
+      "passStar": 3,
+      "minCm": 30,
+      "maxCm": 360,
+      "stepCm": 30
+    },
+    {
+      "gameTime": 120,
+      "qMax": 15,
+      "starArr": [5, 8, 11],
+      "passStar": 3,
+      "minCm": 30,
+      "maxCm": 360,
+      "stepCm": 30
+    }
+  ]
+}

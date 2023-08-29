@@ -1,0 +1,106 @@
+﻿{
+  "gameName": "چند روز",
+  "answerDelay": 1000,
+  "soundLevel": 0.2,
+  "gameDef": [
+    {
+      "gameTime": 90000,
+      "qMax": 8,
+      "starArr": [3, 5, 7],
+      "passStar": 3,
+      "dLimDay": 50,
+      "uLimDay": 100,
+      "minDayCount": 30,
+      "maxDayCount": 80,
+      "qType": 1
+    },
+    {
+      "gameTime": 90000,
+      "qMax": 8,
+      "starArr": [3, 5, 7],
+      "passStar": 3,
+      "dLimDay": 50,
+      "uLimDay": 100,
+      "minDayCount": 30,
+      "maxDayCount": 80,
+      "qType": 1
+    },
+    {
+      "gameTime": 90000,
+      "qMax": 8,
+      "starArr": [3, 5, 7],
+      "passStar": 3,
+      "dLimDay": 50,
+      "uLimDay": 100,
+      "minDayCount": 30,
+      "maxDayCount": 80,
+      "qType": 1
+    },
+    {
+      "gameTime": 90000,
+      "qMax": 8,
+      "starArr": [3, 5, 7],
+      "passStar": 3,
+      "dLimDay": 50,
+      "uLimDay": 100,
+      "minDayCount": 30,
+      "maxDayCount": 80,
+      "qType": 2
+    },
+    {
+      "gameTime": 90000,
+      "qMax": 8,
+      "starArr": [3, 5, 7],
+      "passStar": 3,
+      "dLimDay": 50,
+      "uLimDay": 100,
+      "minDayCount": 30,
+      "maxDayCount": 80,
+      "qType": 2
+    },
+    {
+      "gameTime": 90000,
+      "qMax": 8,
+      "starArr": [3, 5, 7],
+      "passStar": 3,
+      "dLimDay": 50,
+      "uLimDay": 100,
+      "minDayCount": 30,
+      "maxDayCount": 80,
+      "qType": 2
+    },
+    {
+      "gameTime": 90000,
+      "qMax": 8,
+      "starArr": [3, 5, 7],
+      "passStar": 3,
+      "dLimDay": 50,
+      "uLimDay": 100,
+      "minDayCount": 30,
+      "maxDayCount": 80,
+      "qType": 3
+    },
+    {
+      "gameTime": 90000,
+      "qMax": 8,
+      "starArr": [3, 5, 7],
+      "passStar": 3,
+      "dLimDay": 50,
+      "uLimDay": 100,
+      "minDayCount": 30,
+      "maxDayCount": 80,
+      "qType": 3
+    },
+    {
+      "gameTime": 90000,
+      "qMax": 8,
+      "starArr": [3, 5, 7],
+      "passStar": 3,
+      "dLimDay": 50,
+      "uLimDay": 100,
+      "minDayCount": 30,
+      "maxDayCount": 80,
+      "qType": 3
+    }
+  ]
+}

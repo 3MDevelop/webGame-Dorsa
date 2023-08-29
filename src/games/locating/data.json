@@ -1,0 +1,89 @@
+﻿{
+  "gameName": "جانمایی",
+  "answerDelay": 1000,
+  "soundLevel": 0.2,
+  "picArr": [146, 48, 45, 50],
+  "gameDef": [
+    {
+      "gameTime": 90,
+      "qMax": 25,
+      "starArr": [18, 20, 22],
+      "passStar": 3,
+      "fNum": 1,
+      "picCountMin": 3,
+      "picCountMax": 3
+    },
+    {
+      "gameTime": 90,
+      "qMax": 25,
+      "starArr": [18, 20, 22],
+      "passStar": 3,
+      "fNum": 1,
+      "picCountMin": 4,
+      "picCountMax": 4
+    },
+    {
+      "gameTime": 90,
+      "qMax": 25,
+      "starArr": [18, 20, 22],
+      "passStar": 3,
+      "fNum": 1,
+      "picCountMin": 5,
+      "picCountMax": 5
+    },
+    {
+      "gameTime": 90,
+      "qMax": 25,
+      "starArr": [18, 20, 22],
+      "passStar": 3,
+      "fNum": 1,
+      "picCountMin": 5,
+      "picCountMax": 5
+    },
+    {
+      "gameTime": 90,
+      "qMax": 25,
+      "starArr": [18, 20, 22],
+      "passStar": 3,
+      "fNum": 1,
+      "picCountMin": 6,
+      "picCountMax": 6
+    },
+    {
+      "gameTime": 90,
+      "qMax": 25,
+      "starArr": [18, 20, 22],
+      "passStar": 3,
+      "fNum": 1,
+      "picCountMin": 7,
+      "picCountMax": 7
+    },
+    {
+      "gameTime": 90,
+      "qMax": 25,
+      "starArr": [18, 20, 22],
+      "passStar": 3,
+      "fNum": 2,
+      "picCountMin": 4,
+      "picCountMax": 4
+    },
+    {
+      "gameTime": 90,
+      "qMax": 25,
+      "starArr": [18, 20, 22],
+      "passStar": 3,
+      "fNum": 3,
+      "picCountMin": 5,
+      "picCountMax": 5
+    },
+    {
+      "gameTime": 90,
+      "qMax": 25,
+      "starArr": [18, 20, 22],
+      "passStar": 3,
+      "fNum": 4,
+      "picCountMin": 6,
+      "picCountMax": 6
+    }
+  ]
+}

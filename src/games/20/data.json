@@ -1,0 +1,107 @@
+﻿{
+  "gameName": "بیست",
+  "answerDelay": 1000,
+  "soundLevel": 0.2,
+
+  "gameDef": [
+    {
+      "gameTime": 90,
+      "qMax": 20,
+      "starArr": [3, 6, 18],
+      "passStar": 3,
+      "minNum": 1,
+      "maxNum": 50,
+      "numStep": 1,
+      "numCount": 25,
+      "sortType": "r"
+    },
+    {
+      "gameTime": 90,
+      "qMax": 20,
+      "starArr": [3, 6, 18],
+      "passStar": 3,
+      "minNum": 1,
+      "maxNum": 100,
+      "numStep": 1,
+      "numCount": 25,
+      "sortType": "r"
+    },
+    {
+      "gameTime": 90,
+      "qMax": 20,
+      "starArr": [3, 6, 18],
+      "passStar": 3,
+      "minNum": 1,
+      "maxNum": 100,
+      "numStep": 1,
+      "numCount": 25,
+      "sortType": "r"
+    },
+    {
+      "gameTime": 90,
+      "qMax": 20,
+      "starArr": [3, 6, 18],
+      "passStar": 3,
+      "minNum": 1,
+      "maxNum": 32,
+      "numStep": 2,
+      "numCount": 16,
+      "sortType": "r"
+    },
+    {
+      "gameTime": 90,
+      "qMax": 20,
+      "starArr": [3, 6, 18],
+      "passStar": 3,
+      "minNum": 1,
+      "maxNum": 60,
+      "numStep": 2,
+      "numCount": 16,
+      "sortType": "r"
+    },
+    {
+      "gameTime": 90,
+      "qMax": 20,
+      "starArr": [3, 6, 18],
+      "passStar": 3,
+      "minNum": 1,
+      "maxNum": 100,
+      "numStep": 2,
+      "numCount": 25,
+      "sortType": "r"
+    },
+    {
+      "gameTime": 90,
+      "qMax": 20,
+      "starArr": [3, 6, 18],
+      "passStar": 3,
+      "minNum": 1,
+      "maxNum": 100,
+      "numStep": 5,
+      "numCount": 9,
+      "sortType": "r"
+    },
+    {
+      "gameTime": 90,
+      "qMax": 20,
+      "starArr": [3, 6, 18],
+      "passStar": 3,
+      "minNum": 1,
+      "maxNum": 100,
+      "numStep": 4,
+      "numCount": 9,
+      "sortType": "r"
+    },
+    {
+      "gameTime": 90,
+      "qMax": 8,
+      "starArr": [3, 6, 8],
+      "passStar": 3,
+      "minNum": 1,
+      "maxNum": 100,
+      "numStep": 3,
+      "numCount": 9,
+      "sortType": "r"
+    }
+  ]
+}

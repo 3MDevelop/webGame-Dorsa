@@ -1,0 +1,24 @@
+{
+  "name": "dorsa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "mustache": "^4.1.0",
+    "react-script-tag": "^1.1.2",
+    "walk": "^2.3.14"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.16.0",
+    "@babel/preset-react": "^7.14.5",
+    "live-server": "^1.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "live-server src --watch --no-css-inject --entry-file=./index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

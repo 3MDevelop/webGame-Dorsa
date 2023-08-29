@@ -1,0 +1,81 @@
+﻿
+{
+  "gameName": "یازده",
+  "answerDelay": 500,
+  "resetTime":500,
+  "soundLevel": 0.2,
+  "gameDef": [
+    {
+      "gameTime": 90,
+      "qMax": 50,
+      "nextTime": 15,
+      "starArr": [24, 27, 30],
+      "passStar": 3,
+      "sumVal": 10
+    },
+    {
+      "gameTime": 90,
+      "qMax": 50,
+      "nextTime": 15,
+      "starArr": [24, 27, 30],
+      "passStar": 3,
+      "sumVal": 11
+    },
+    {
+      "gameTime": 90,
+      "qMax": 50,
+      "nextTime": 15,
+      "starArr": [24, 27, 30],
+      "passStar": 3,
+      "sumVal": 12
+    },
+    {
+      "gameTime": 90,
+      "qMax": 50,
+      "nextTime": 15,
+      "starArr": [24, 27, 30],
+      "passStar": 3,
+      "sumVal": 13
+    },
+    {
+      "gameTime": 90,
+      "qMax": 50,
+      "nextTime": 15,
+      "starArr": [24, 27, 30],
+      "passStar": 3,
+      "sumVal": 14
+    },
+    {
+      "gameTime": 90,
+      "qMax": 50,
+      "nextTime": 15,
+      "starArr": [24, 27, 30],
+      "passStar": 3,
+      "sumVal": 15
+    },
+    {
+      "gameTime": 90,
+      "qMax": 50,
+      "nextTime": 15,
+      "starArr": [24, 27, 30],
+      "passStar": 3,
+      "sumVal": 16
+    },
+    {
+      "gameTime": 90,
+      "qMax": 50,
+      "nextTime": 15,
+      "starArr": [24, 27, 30],
+      "passStar": 3,
+      "sumVal": 17
+    },
+    {
+      "gameTime": 90,
+      "qMax": 50,
+      "nextTime": 15,
+      "starArr": [24, 27, 30],
+      "passStar": 3,
+      "sumVal": 18
+    }
+  ]
+}

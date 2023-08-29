@@ -1,0 +1,116 @@
+﻿{
+  "gameName": "محاسبه سریع",
+  "answerDelay": 1000,
+  "startDelay": 700,
+  "soundLevel": 0.2,
+  "gameDef": [
+    {
+      "gameTime": 120,
+      "qMax": 11,
+      "starArr": [4, 6, 8],
+      "passStar": 3,
+      "showDelay": 1000,
+      "offDelay": 600,
+      "minVal": 1,
+      "maxVal": 10,
+      "minCount": 4,
+      "maxCount": 4
+    },
+    {
+      "gameTime": 120,
+      "qMax": 16,
+      "starArr": [9, 11, 13],
+      "passStar": 3,
+      "showDelay": 700,
+      "offDelay": 600,
+      "minVal": 1,
+      "maxVal": 10,
+      "minCount": 5,
+      "maxCount": 5
+    },
+    {
+      "gameTime": 120,
+      "qMax": 20,
+      "starArr": [13, 15, 17],
+      "passStar": 3,
+      "showDelay": 500,
+      "offDelay": 600,
+      "minVal": 1,
+      "maxVal": 10,
+      "minCount": 6,
+      "maxCount": 6
+    },
+    {
+      "gameTime": 120,
+      "qMax": 11,
+      "starArr": [4, 6, 8],
+      "passStar": 3,
+      "showDelay": 1000,
+      "offDelay": 600,
+      "minVal": 1,
+      "maxVal": 50,
+      "minCount": 4,
+      "maxCount": 4
+    },
+    {
+      "gameTime": 120,
+      "qMax": 16,
+      "starArr": [9, 11, 13],
+      "passStar": 3,
+      "showDelay": 700,
+      "offDelay": 600,
+      "minVal": 1,
+      "maxVal": 50,
+      "minCount": 5,
+      "maxCount": 5
+    },
+    {
+      "gameTime": 120,
+      "qMax": 20,
+      "starArr": [13, 15, 17],
+      "passStar": 3,
+      "showDelay": 500,
+      "offDelay": 600,
+      "minVal": 1,
+      "maxVal": 50,
+      "minCount": 6,
+      "maxCount": 6
+    },
+    {
+      "gameTime": 120,
+      "qMax": 11,
+      "starArr": [4, 6, 8],
+      "passStar": 3,
+      "showDelay": 1000,
+      "offDelay": 600,
+      "minVal": 1,
+      "maxVal": 100,
+      "minCount": 4,
+      "maxCount": 4
+    },
+    {
+      "gameTime": 120,
+      "qMax": 16,
+      "starArr": [9, 11, 13],
+      "passStar": 3,
+      "showDelay": 700,
+      "offDelay": 600,
+      "minVal": 1,
+      "maxVal": 100,
+      "minCount": 5,
+      "maxCount": 5
+    },
+    {
+      "gameTime": 120,
+      "qMax": 20,
+      "starArr": [13, 15, 17],
+      "passStar": 3,
+      "showDelay": 500,
+      "offDelay": 600,
+      "minVal": 1,
+      "maxVal": 100,
+      "minCount": 6,
+      "maxCount": 6
+    }
+  ]
+}

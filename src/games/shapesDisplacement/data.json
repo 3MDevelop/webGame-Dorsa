@@ -1,0 +1,98 @@
+﻿{
+  "gameName": "جابجایی اشکال",
+  "answerDelay": 1000,
+  "soundLevel": 0.2,
+  "picArr":[143, 48, 45, 50],
+  "gameDef": [
+    {
+      "gameTime": 90,
+      "qMax": 15,
+      "starArr": [7, 9, 11],
+      "passStar": 3,
+      "fNum": 1,
+      "showTime": 3000,
+      "offTime": 500,
+      "cellCount": 4
+    },
+    {
+      "gameTime": 90,
+      "qMax": 17,
+      "starArr": [9, 11, 13],
+      "passStar": 3,
+      "fNum": 1,
+      "showTime": 3000,
+      "offTime": 500,
+      "cellCount": 4
+    },
+    {
+      "gameTime": 90,
+      "qMax": 17,
+      "starArr": [9, 11, 13],
+      "passStar": 3,
+      "fNum": 2,
+      "showTime": 3000,
+      "offTime": 500,
+      "cellCount": 4
+    },
+    {
+      "gameTime": 90,
+      "qMax": 15,
+      "starArr": [7, 9, 11],
+      "passStar": 3,
+      "fNum": 1,
+      "showTime": 3000,
+      "offTime": 500,
+      "cellCount": 9
+    },
+    {
+      "gameTime": 90,
+      "qMax": 17,
+      "starArr": [9, 11, 13],
+      "passStar": 3,
+      "fNum": 1,
+      "showTime": 3000,
+      "offTime": 500,
+      "cellCount": 9
+    },
+    {
+      "gameTime": 90,
+      "qMax": 17,
+      "starArr": [9, 11, 13],
+      "passStar": 3,
+      "fNum": 3,
+      "showTime": 3000,
+      "offTime": 500,
+      "cellCount": 9
+    },
+    {
+      "gameTime": 90,
+      "qMax": 15,
+      "starArr": [7, 9, 11],
+      "passStar": 3,
+      "fNum": 1,
+      "showTime": 3000,
+      "offTime": 500,
+      "cellCount": 16
+    },
+    {
+      "gameTime": 90,
+      "qMax": 17,
+      "starArr": [9, 11, 13],
+      "passStar": 3,
+      "fNum": 1,
+      "showTime": 3000,
+      "offTime": 500,
+      "cellCount": 16
+    },
+    {
+      "gameTime": 90,
+      "qMax": 17,
+      "starArr": [9, 11, 13],
+      "passStar": 3,
+      "fNum": 4,
+      "showTime": 3000,
+      "offTime": 500,
+      "cellCount": 16
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+[
+  {
+    "name": "محاسبه سریع",
+    "path": "fastCalculation"
+  },
+  {
+    "name": "یازده",
+    "path": "11"
+  },
+  { 
+    "name": "بیست",
+    "path": "20"
+  },
+  {
+    "name": "جانمایی",
+    "path": "locating"
+  },
+  {
+    "name": "کلمات هم معنی",
+    "path": "sameMeaningWords"
+  },
+  {
+    "name": "مستطیل رنگی",
+    "path": "coloredRectangle"
+  },
+  {
+    "name": "پیامک",
+    "path": "sms"
+  },
+  {
+    "name": "اشکال مشابه",
+    "path": "similarShapes"
+  },
+  {
+    "name": "جابجایی اشکال",
+    "path": "shapesDisplacement"
+  },
+  {
+    "name": "تبدیل واحد",
+    "path": "unitConversion"
+  },
+  {
+    "name": "چند روز",
+    "path": "fewdays"
+  },
+  {
+    "name": "جادوی اشکال",
+    "path": "magicOfShapes"
+  },
+  {
+    "name": "گردونه اعداد",
+    "path": "cycleOfNumber"
+  }
+]

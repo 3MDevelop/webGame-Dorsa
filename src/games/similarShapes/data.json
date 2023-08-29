@@ -1,0 +1,115 @@
+﻿{
+  "gameName": "اشکال مشابه",
+  "answerDelay": 600,
+  "soundLevel": 0.2,
+  "gameDef": [
+    {
+      "gameTime": 90,
+      "qMax": 13,
+      "starArr": [6, 8, 10],
+      "passStar": 3,
+      "minVal": 3,
+      "maxVal": 6,
+      "minPicCount": 4,
+      "picMax": 11,
+      "cellCount":12,
+      "questionDelay": 6000
+    },
+    {
+      "gameTime": 90,
+      "qMax": 13,
+      "starArr": [6, 8, 10],
+      "passStar": 3,
+      "minVal": 3,
+      "maxVal": 6,
+      "minPicCount": 3,
+      "picMax": 11,
+      "cellCount": 12,
+      "questionDelay": 5000
+    },
+    {
+      "gameTime": 90,
+      "qMax": 13,
+      "starArr": [6, 8, 10],
+      "passStar": 3,
+      "minVal": 3,
+      "maxVal": 6,
+      "minPicCount": 3,
+      "picMax": 11,
+      "cellCount": 12,
+      "questionDelay": 4000
+    },
+    {
+      "gameTime": 90,
+      "qMax": 13,
+      "starArr": [6, 8, 10],
+      "passStar": 3,
+      "minVal": 3,
+      "maxVal": 6,
+      "minPicCount": 3,
+      "picMax": 11,
+      "cellCount": 16,
+      "questionDelay": 6000
+    },
+    {
+      "gameTime": 90,
+      "qMax": 13,
+      "starArr": [6, 8, 10],
+      "passStar": 3,
+      "minVal": 3,
+      "maxVal": 6,
+      "minPicCount": 2,
+      "picMax": 11,
+      "cellCount": 16,
+      "questionDelay": 5000
+    },
+    {
+      "gameTime": 90,
+      "qMax": 13,
+      "starArr": [6, 8, 10],
+      "passStar": 3,
+      "minVal": 3,
+      "maxVal": 6,
+      "minPicCount": 2,
+      "picMax": 11,
+      "cellCount": 16,
+      "questionDelay": 4000
+    },
+    {
+      "gameTime": 90,
+      "qMax": 13,
+      "starArr": [6, 8, 10],
+      "passStar": 3,
+      "minVal": 3,
+      "maxVal": 7,
+      "minPicCount": 2,
+      "picMax": 11,
+      "cellCount": 20,
+      "questionDelay": 6000
+    },
+    {
+      "gameTime": 90,
+      "qMax": 13,
+      "starArr": [6, 8, 10],
+      "passStar": 3,
+      "minVal": 3,
+      "maxVal": 7,
+      "minPicCount": 2,
+      "picMax": 11,
+      "cellCount": 20,
+      "questionDelay": 5000
+    },
+    {
+      "gameTime": 90,
+      "qMax": 13,
+      "starArr": [6, 8, 10],
+      "passStar": 3,
+      "minVal": 3,
+      "maxVal": 7,
+      "minPicCount": 2,
+      "picMax": 11,
+      "cellCount": 20,
+      "questionDelay": 4000
+    }
+  ]
+}

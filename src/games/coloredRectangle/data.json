@@ -1,0 +1,81 @@
+﻿{
+  "gameName": "مستطیل رنگی",
+  "answerDelay": 1000,
+  "soundLevel": 0.2,
+  "colorsRef": [
+    "#7FFF00",
+    "#DAA520",
+    "#FFFF00",
+    "#FF0000",
+    "#A9A9A9",
+    "#FFF8DC",
+    "#00CED1"
+  ],
+  "borderThickness": 2,
+  "borderColor": "#000000",
+  "gameDef": [
+    {
+      "gameTime": 90,
+      "qMax": 25,
+      "starArr": [120, 150, 180],
+      "passStar": 3,
+      "colorMax": 4
+    },
+    {
+      "gameTime": 90,
+      "qMax": 25,
+      "starArr": [120, 150, 180],
+      "passStar": 3,
+      "colorMax": 4
+    },
+    {
+      "gameTime": 90,
+      "qMax": 25,
+      "starArr": [120, 150, 180],
+      "passStar": 3,
+      "colorMax": 4
+    },
+    {
+      "gameTime": 90,
+      "qMax": 25,
+      "starArr": [120, 150, 180],
+      "passStar": 3,
+      "colorMax": 5
+    },
+    {
+      "gameTime": 90,
+      "qMax": 25,
+      "starArr": [120, 150, 180],
+      "passStar": 3,
+      "colorMax": 5
+    },
+    {
+      "gameTime": 90,
+      "qMax": 25,
+      "starArr": [120, 150, 180],
+      "passStar": 3,
+      "colorMax": 5
+    },
+    {
+      "gameTime": 90,
+      "qMax": 25,
+      "starArr": [120, 150, 180],
+      "passStar": 3,
+      "colorMax": 7
+    },
+    {
+      "gameTime": 90,
+      "qMax": 25,
+      "starArr": [120, 150, 180],
+      "passStar": 3,
+      "colorMax": 7
+    },
+    {
+      "gameTime": 90,
+      "qMax": 25,
+      "starArr": [120, 150, 180],
+      "passStar": 3,
+      "colorMax": 7
+    }
+  ]
+}
