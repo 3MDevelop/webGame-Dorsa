@@ -4,24 +4,28 @@
     "path": "multiplication"
   },
   {
-    "name": "جدول اعداد",
-    "path": "tableOfNumber"
-  },
-  {
     "name": "املا نویسی",
     "path": "spelling"
-  },
-  {
-    "name": "فارسی نویسی",
-    "path": "persianWriting"
   },
   {
     "name": "لغت نامه",
     "path": "dictionary"
   },
   {
+    "name": "فارسی نویسی",
+    "path": "persianWriting"
+  },
+  {
     "name": "هزارتوی حروف",
     "path": "alphabetMaze"
+  },
+  {
+    "name": "شکل یابی",
+    "path": "shapeFinding"
+  },
+  {
+    "name": "جدول اعداد",
+    "path": "tableOfNumber"
   },
   {
     "name": "محاسبه سریع",
