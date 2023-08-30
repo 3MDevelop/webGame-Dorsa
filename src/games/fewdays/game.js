@@ -15,40 +15,42 @@ let ansArr = new Array()
 
 
 function boxSelect(target) {
-
-  const catKey = target.boxCat;
-  if (!selectedValues[catKey]) {
-    document.getElementById(target.id).classList.add('bg-info');
-    selectedValues[catKey] = target.id;
-  } else if (selectedValues[catKey] === target.id) {
-    document.getElementById(target.id).classList.remove('bg-info');
-    selectedValues[catKey] = undefined;
-  } else {
-    document.getElementById(selectedValues[catKey]).classList.remove('bg-info');
-    document.getElementById(target.id).classList.add('bg-info');
-    selectedValues[catKey] = target.id;
-  }
-
-  switch (target.boxCat) {
-    case "W":
-      ansArr[0] = (selectedValues[catKey] != undefined) ? target.id : undefined
-      break;
-    case "D":
-      ansArr[1] = (selectedValues[catKey] != undefined) ? target.id : undefined
-      break;
-    case "M":
-      ansArr[2] = (selectedValues[catKey] != undefined) ? target.id : undefined
-      break;
-  }
-
-  if (!isValInArr(ansArr, undefined)) {
-    if (arrAreEqual(ansArr, tAnsArr)) {
-      setScore(1)
+  if (qMode) {
+    const catKey = target.boxCat;
+    if (!selectedValues[catKey]) {
+      document.getElementById(target.id).classList.add('bg-info');
+      selectedValues[catKey] = target.id;
+    } else if (selectedValues[catKey] === target.id) {
+      document.getElementById(target.id).classList.remove('bg-info');
+      selectedValues[catKey] = undefined;
     } else {
-      setScore(-1)
+      document.getElementById(selectedValues[catKey]).classList.remove('bg-info');
+      document.getElementById(target.id).classList.add('bg-info');
+      selectedValues[catKey] = target.id;
     }
-    showAns()
-    setTimeout(nextQuestion, gData.answerDelay);
+
+    switch (target.boxCat) {
+      case "W":
+        ansArr[0] = (selectedValues[catKey] != undefined) ? target.id : undefined
+        break;
+      case "D":
+        ansArr[1] = (selectedValues[catKey] != undefined) ? target.id : undefined
+        break;
+      case "M":
+        ansArr[2] = (selectedValues[catKey] != undefined) ? target.id : undefined
+        break;
+    }
+
+    if (!isValInArr(ansArr, undefined)) {
+      qMode = false
+      if (arrAreEqual(ansArr, tAnsArr)) {
+        setScore(1)
+      } else {
+        setScore(-1)
+      }
+      showAns()
+      setTimeout(nextQuestion, gData.answerDelay);
+    }
   }
 }
 
@@ -93,6 +95,7 @@ function clearBox() {
 
 function fQuestion() {
   clearBox()
+  qMode = true
   countDay = randRange(gData.gameDef[gameCurLevel].minDayCount, gData.gameDef[gameCurLevel].maxDayCount, 1)
   switch (gData.gameDef[gameCurLevel].qType) {
     case 1:
