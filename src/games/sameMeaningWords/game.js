@@ -140,6 +140,7 @@ function fQuestion() {
     .then(response => response.json())
     .then(json => {
       wordArr = json[gData.gameDef[window.gameCurLevel].wordGroup - 1];
+      /* wordArr = json; */
       gFunc()
     });
 }
