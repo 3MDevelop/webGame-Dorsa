@@ -31,7 +31,7 @@ class Help extends React.Component {
 
 const WDay = (props) => {
   return (
-    <div className='weekD' onClick={()=>{boxSelect(props)}}>
+    <div id={props.id} className='weekD' onClick={() => { boxSelect(props) }}>
       {props.label}
     </div>
   );
@@ -39,7 +39,7 @@ const WDay = (props) => {
 
 const Days = (props) => {
   return (
-    <div className='dayNum'>
+    <div id={props.id} className='dayNum' onClick={() => { boxSelect(props) }}>
       {props.num}
     </div>
   )
@@ -47,7 +47,7 @@ const Days = (props) => {
 
 const Mounth = (props) => {
   return (
-    <div className='mounth' >
+    <div id={props.id} className='mounth' onClick={() => { boxSelect(props) }}>
       {props.name}
     </div>
   )
@@ -58,7 +58,7 @@ const DaysContainer = () => {
     <div className='daysContainer'>
       {
         Array.from({ length: 31 }, (_, index) => index + 1).map((num, index) => (
-          <Days key={index} num={num} />
+          <Days key={index} id={"D" + (index + 1)} label={num} boxCat={"D"} num={num} />
         ))
       }
     </div>
@@ -69,7 +69,7 @@ const WeekContainer = () => {
   return (
     <div className='weekContainer'>
       {weekDaysRef.map((day, index) => (
-        <WDay key={index} id={"W" + index} label={day} boxCat={"W"} num={index} />
+        <WDay key={index} id={"W" + (index + 1)} label={day} boxCat={"W"} num={index + 1} />
       ))}
     </div>
   )
@@ -80,7 +80,7 @@ const MounthContainer = () => {
     <div className='mounthContainer'>
       {
         mounthRef.map((name, index) => (
-          <Mounth key={index} ind={index} name={name} />
+          <Mounth key={index} ind={index} id={"M" + (index + 1)} label={name} boxCat={"M"} name={name} />
         ))
       }
     </div>

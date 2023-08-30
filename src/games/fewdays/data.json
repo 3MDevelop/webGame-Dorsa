@@ -12,7 +12,7 @@
       "uLimDay": 100,
       "minDayCount": 30,
       "maxDayCount": 80,
-      "qType": 1
+      "qType": 3
     },
     {
       "gameTime": 90000,
