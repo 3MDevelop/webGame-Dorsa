@@ -46,5 +46,29 @@
   {
     "name": "جادوی اشکال",
     "path": "magicOfShapes"
+  },
+  {
+    "name": "ضرب اعداد",
+    "path": "multiplication"
+  },
+  {
+    "name": "جدول اعداد",
+    "path": "tableOfNumber"
+  },
+  {
+    "name": "املا نویسی",
+    "path": "spelling"
+  },
+  {
+    "name": "فارسی نویسی",
+    "path": "persianWriting"
+  },
+  {
+    "name": "لغت نامه",
+    "path": "dictionary"
+  },
+  {
+    "name": "هزارتوی حروف",
+    "path": "alphabetMaze"
   }
 ]

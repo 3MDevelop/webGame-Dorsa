@@ -30,8 +30,8 @@
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  transition: 0.2s ease;
-  font-size: 25pt;
+  transition: 0.05s ease;
+  font-size: 1.2rem;
 
   background-repeat: no-repeat;
   background-position: center;
@@ -55,6 +55,4 @@
     border-radius: 10px;
     font-size: 20px;
   }
-}
-@media screen and (orientation:landscape) and (pointer:coarse){
 }
