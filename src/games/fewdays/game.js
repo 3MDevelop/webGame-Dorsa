@@ -61,7 +61,6 @@ function hideFunc() {
   qMode = false
 }
 
-
 function nextTimerFunc() {
   document.getElementById('btnBack').style.width = stPos + "%"
   stPos = stPos + (100 / nxStep)
