@@ -8,25 +8,33 @@ let boxArr = new Array()
 let outArr = new Array()
 let ansWord
 
-showAnswer = function () {
+showAnswer = function (inPos) {
   qMode = false
-  for (let index = 0; index < ansArr.length; index++) {
-    document.getElementById('d' + ansArr[index]).classList.add('bg-danger')
-  }
 
-  count = 0
-  const intervalId = setInterval(() => {
-    document.getElementById('d' + tAnsArr[count]).classList.remove('bg-danger')
-    document.getElementById('d' + tAnsArr[count]).classList.add('bg-success')
-    count++
-    if (count == tAnsArr.length) {
-      clearInterval(intervalId);
-      setTimeout(() => {
-        nextQuestion()
-      }, gData.answerDelay);
+  if (inPos) {
+    for (let index = 0; index < ansArr.length; index++) {
+      document.getElementById('d' + ansArr[index]).classList.add('bg-success')
     }
-  }, gData.showAnswerStep);
-
+    setTimeout(() => {
+      nextQuestion()
+    }, gData.answerDelay);
+  } else {
+    for (let index = 0; index < ansArr.length; index++) {
+      document.getElementById('d' + ansArr[index]).classList.add('bg-danger')
+    }
+    count = 0
+    const intervalId = setInterval(() => {
+      document.getElementById('d' + tAnsArr[count]).classList.remove('bg-danger')
+      document.getElementById('d' + tAnsArr[count]).classList.add('bg-success')
+      count++
+      if (count == tAnsArr.length) {
+        clearInterval(intervalId);
+        setTimeout(() => {
+          nextQuestion()
+        }, gData.answerDelay);
+      }
+    }, gData.showAnswerStep);
+  }
 }
 
 selectBox = (inID) => {
@@ -40,11 +48,11 @@ selectBox = (inID) => {
         document.getElementById('d' + inID).classList.add('bg-secondary')
         if (ansArr.length == tAnsArr.length) {
           setScore(1)
-          showAnswer()
+          showAnswer(true)
         }
       } else {
         setScore(-1)
-        showAnswer()
+        showAnswer(false)
       }
     }
   }
