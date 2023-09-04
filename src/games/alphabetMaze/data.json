@@ -1,0 +1,89 @@
+﻿{
+  "gameName": "هزارتوی حروف",
+  "answerDelay": 1000,
+  "showAnswerStep": 200,
+  "soundLevel": 0.2,
+  "gameDef": [
+    {
+      "gameTime": 90000,
+      "qMax": 14,
+      "starArr": [7, 9, 11],
+      "passStar": 3,
+      "wordGroup": 1,
+      "cellCount":9,
+      "questionTime": 1000
+    },
+    {
+      "gameTime": 90,
+      "qMax": 14,
+      "starArr": [7, 9, 11],
+      "passStar": 3,
+      "wordGroup": 1,
+      "cellCount":16,
+      "questionTime": 1000
+    },
+    {
+      "gameTime": 90,
+      "qMax": 14,
+      "starArr": [7, 9, 11],
+      "passStar": 3,
+      "wordGroup": 1,
+      "cellCount":16,
+      "questionTime": 1000
+    },
+    {
+      "gameTime": 90,
+      "qMax": 14,
+      "starArr": [7, 9, 11],
+      "passStar": 3,
+      "wordGroup": 1,
+      "cellCount":16,
+      "questionTime": 1000
+    },
+    {
+      "gameTime": 90,
+      "qMax": 14,
+      "starArr": [7, 9, 11],
+      "passStar": 3,
+      "wordGroup": 1,
+      "cellCount":16,
+      "questionTime": 1000
+    },
+    {
+      "gameTime": 90,
+      "qMax": 14,
+      "starArr": [7, 9, 11],
+      "passStar": 3,
+      "wordGroup": 1,
+      "cellCount":16,
+      "questionTime": 1000
+    },
+    {
+      "gameTime": 90,
+      "qMax": 14,
+      "starArr": [7, 9, 11],
+      "passStar": 3,
+      "wordGroup": 1,
+      "cellCount":16,
+      "questionTime": 1000
+    },
+    {
+      "gameTime": 90,
+      "qMax": 14,
+      "starArr": [7, 9, 11],
+      "passStar": 3,
+      "wordGroup": 1,
+      "cellCount":16,
+      "questionTime": 1000
+    },
+    {
+      "gameTime": 90,
+      "qMax": 14,
+      "starArr": [7, 9, 11],
+      "passStar": 3,
+      "wordGroup": 1,
+      "cellCount":16,
+      "questionTime": 1000
+    }
+  ]
+}
