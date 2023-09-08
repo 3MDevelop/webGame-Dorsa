@@ -1,7 +1,0 @@
-<data-set>
-	<scaleData scale="يارد" scaleInCm = "90" />
-  <scaleData scale="فوت" scaleInCm = "30" />
-  <scaleData scale="اينچ" scaleInCm = "2.5" />
-  <scaleData scale="سانتيمتر" scaleInCm = "1" />
-  <scaleData scale="ميليمتر" scaleInCm = "0.1" />
-</data-set>
