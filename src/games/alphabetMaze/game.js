@@ -6,19 +6,20 @@ let tAnsArr = new Array()
 let ansArr = new Array()
 let boxArr = new Array()
 let outArr = new Array()
-let ansWord
+let ansWord, ansString, cellMax
 
 showAnswer = function (inPos) {
   qMode = false
-
   if (inPos) {
     for (let index = 0; index < ansArr.length; index++) {
       document.getElementById('d' + ansArr[index]).classList.add('bg-success')
     }
+    setScore(1)
     setTimeout(() => {
       nextQuestion()
     }, gData.answerDelay);
   } else {
+    setScore(-1)
     for (let index = 0; index < ansArr.length; index++) {
       document.getElementById('d' + ansArr[index]).classList.add('bg-danger')
     }
@@ -37,25 +38,54 @@ showAnswer = function (inPos) {
   }
 }
 
-selectBox = (inID) => {
-  if (qMode) {
-    if (ansArr[ansArr.length - 1] == inID) {
-      document.getElementById('d' + inID).classList.remove('bg-secondary')
-      ansArr.length = ansArr.length - 1
-    } else {
-      ansArr.push(inID)
-      if (tAnsArr[ansArr.length - 1] == ansArr[ansArr.length - 1]) {
-        document.getElementById('d' + inID).classList.add('bg-secondary')
-        if (ansArr.length == tAnsArr.length) {
-          setScore(1)
-          showAnswer(true)
-        }
-      } else {
-        setScore(-1)
-        showAnswer(false)
-      }
-    }
+
+const contPosArr = (inInd) => {
+  outArr.length = 0
+  cellMax = gData.gameDef[window.gameCurLevel].cellCount
+  if (inInd > Math.sqrt(cellMax) - 1) {
+    outArr.push(inInd - Math.sqrt(cellMax))
   }
+  if (inInd % Math.sqrt(cellMax) != 0) {
+    outArr.push(inInd - 1)
+  }
+  if (inInd % Math.sqrt(cellMax) != (Math.sqrt(cellMax) - 1)) {
+    outArr.push(inInd + 1)
+  }
+  if (inInd < cellMax - Math.sqrt(cellMax)) {
+    outArr.push(inInd + Math.sqrt(cellMax))
+  }
+  return outArr
+}
+
+chConti = (inID) => {
+  if (
+    isValInArr(contPosArr(inID), ansArr[ansArr.length - 1]) ||
+    ansArr.length == 0
+  ) {
+    return true
+  } else return false
+}
+
+selectID = (selectSit, inID) => {
+  if (selectSit) {
+    document.getElementById('d' + inID).classList.add('bg-secondary')
+    ansArr.push(inID)
+    ansString = ansString + boxArr[inID]
+  } else {
+    document.getElementById('d' + inID).classList.remove('bg-secondary')
+    ansArr.length = ansArr.length - 1
+    ansString = ansString.slice(0, -1)
+  }
+}
+
+selectBox = (inID) => {
+  if (inID == ansArr[ansArr.length - 1]) {
+    selectID(false, inID)
+  } else {
+    (chConti(inID) && boxArr[inID] == ansWord[ansString.length]) ? selectID(true, inID) : showAnswer(false)
+    if (ansWord.length == ansString.length) showAnswer(true)
+  }
+
 }
 
 const findNextPos = (inInd) => {
@@ -83,6 +113,7 @@ const findNextPos = (inInd) => {
 
 
 const showBoxes = () => {
+  ansString = ''
   tAnsArr.length = 0
   ansArr.length = 0
   boxArr.length = 0
@@ -120,9 +151,6 @@ const showBoxes = () => {
   document.getElementById('boxContainer').classList.remove('d-none')
 }
 
-
-
-
 gFunc = function () {
   console.info(wordSource[qCount - 1])
   ansWord = wordSource[qCount - 1]
@@ -133,7 +161,6 @@ gFunc = function () {
   ansWord = ansWord.replace(" ", "")
   setTimeout(showBoxes, gData.gameDef[window.gameCurLevel].questionTime)
 }
-
 
 fQuestion = function () {
 
@@ -152,5 +179,3 @@ nextQuestion = function () {
     gFunc();
   }
 };
-
-
