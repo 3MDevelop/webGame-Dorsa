@@ -167,7 +167,7 @@ fQuestion = function () {
   fetch("wordList.json")
     .then(response => response.json())
     .then(json => {
-      wordSource = arrRandomSelect(json[gData.gameDef[window.gameCurLevel].wordGroup], gData.gameDef[window.gameCurLevel].qMax);
+      wordSource = arrRandomSelect(json[gData.gameDef[window.gameCurLevel].wordGroup-1], gData.gameDef[window.gameCurLevel].qMax);
       gFunc()
     });
 }
