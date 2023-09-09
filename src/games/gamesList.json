@@ -24,6 +24,22 @@
     "path": "shapeFinding"
   },
   {
+    "name": "رد پا",
+    "path": "footSteps"
+  },
+  {
+    "name": "ماز",
+    "path": "maze"
+  },
+  {
+    "name": "پازل سیاه و سفید",
+    "path": "bwPuzzle"
+  },
+  {
+    "name": "کشتی",
+    "path": "ship"
+  },
+  {
     "name": "جدول اعداد",
     "path": "tableOfNumber"
   },
