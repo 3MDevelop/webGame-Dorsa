@@ -22,27 +22,20 @@ selectBox = function (inID) {
     document.getElementById('bc' + inID).classList.remove("falseBoarder")
     document.getElementById('bc' + ansID).classList.remove("trueBoarder")
     nextQuestion()
-  }, 1000)
-
+  }, gData.answerDelay)
 }
 
-
 gFunc = function () {
-  console.info(cellCount)
   qArr = arrRandomSelect(wordSource, cellCount)
   ansID = randRange(0, cellCount - 1, 1)
-  console.info(qArr)
   console.info(ansID)
-
   document.getElementById('Monitor').innerHTML = qArr[ansID]
   qArr.map((img, index) => {
     document.getElementById('d' + index).style.backgroundImage = 'url(./img/' + gData.gameDef[window.gameCurLevel].wordGroup + '/' + stringCharRep(img, " ", "%20") + '.webp)';
   })
-
 }
 
 fQuestion = function () {
-
   fetch("wordList.json")
     .then(response => response.json())
     .then(json => {

@@ -12,6 +12,78 @@
       "wordGroup": 1,
       "cellXCount": 4,
       "cellYCount": 10
+    },
+    {
+      "gameTime": 90000,
+      "qMax": 14,
+      "starArr": [7, 9, 11],
+      "passStar": 3,
+      "wordGroup": 1,
+      "cellXCount": 4,
+      "cellYCount": 10
+    },
+    {
+      "gameTime": 90000,
+      "qMax": 14,
+      "starArr": [7, 9, 11],
+      "passStar": 3,
+      "wordGroup": 1,
+      "cellXCount": 4,
+      "cellYCount": 10
+    },
+    {
+      "gameTime": 90000,
+      "qMax": 14,
+      "starArr": [7, 9, 11],
+      "passStar": 3,
+      "wordGroup": 1,
+      "cellXCount": 4,
+      "cellYCount": 10
+    },
+    {
+      "gameTime": 90000,
+      "qMax": 14,
+      "starArr": [7, 9, 11],
+      "passStar": 3,
+      "wordGroup": 1,
+      "cellXCount": 4,
+      "cellYCount": 10
+    },
+    {
+      "gameTime": 90000,
+      "qMax": 14,
+      "starArr": [7, 9, 11],
+      "passStar": 3,
+      "wordGroup": 1,
+      "cellXCount": 4,
+      "cellYCount": 10
+    },
+    {
+      "gameTime": 90000,
+      "qMax": 14,
+      "starArr": [7, 9, 11],
+      "passStar": 3,
+      "wordGroup": 1,
+      "cellXCount": 4,
+      "cellYCount": 10
+    },
+    {
+      "gameTime": 90000,
+      "qMax": 14,
+      "starArr": [7, 9, 11],
+      "passStar": 3,
+      "wordGroup": 1,
+      "cellXCount": 4,
+      "cellYCount": 10
+    },
+    {
+      "gameTime": 90000,
+      "qMax": 14,
+      "starArr": [7, 9, 11],
+      "passStar": 3,
+      "wordGroup": 1,
+      "cellXCount": 4,
+      "cellYCount": 10
     }
   ]
 }
