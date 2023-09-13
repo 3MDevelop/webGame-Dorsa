@@ -1,5 +1,5 @@
 ﻿{
-  "gameName": "شکل یابی",
+  "gameName": "رد پا",
   "answerDelay": 1000,
   "showAnswerStep": 200,
   "soundLevel": 0.2,
@@ -9,81 +9,90 @@
       "qMax": 14,
       "starArr": [7, 9, 11],
       "passStar": 3,
-      "wordGroup": 1,
-      "cellXCount": 4,
-      "cellYCount": 10
+      "cellXCount": 5,
+      "cellYCount": 3,
+      "footCount":3,
+      "footDelay":1000
     },
     {
       "gameTime": 90000,
       "qMax": 14,
       "starArr": [7, 9, 11],
       "passStar": 3,
-      "wordGroup": 1,
-      "cellXCount": 4,
-      "cellYCount": 10
+      "cellXCount": 5,
+      "cellYCount": 3,
+      "footCount":3,
+      "footDelay":1000
     },
     {
       "gameTime": 90000,
       "qMax": 14,
       "starArr": [7, 9, 11],
       "passStar": 3,
-      "wordGroup": 1,
-      "cellXCount": 4,
-      "cellYCount": 10
+      "cellXCount": 5,
+      "cellYCount": 3,
+      "footCount":3,
+      "footDelay":1000
     },
     {
       "gameTime": 90000,
       "qMax": 14,
       "starArr": [7, 9, 11],
       "passStar": 3,
-      "wordGroup": 1,
-      "cellXCount": 4,
-      "cellYCount": 10
+      "cellXCount": 5,
+      "cellYCount": 3,
+      "footCount":3,
+      "footDelay":1000
     },
     {
       "gameTime": 90000,
       "qMax": 14,
       "starArr": [7, 9, 11],
       "passStar": 3,
-      "wordGroup": 1,
-      "cellXCount": 4,
-      "cellYCount": 10
+      "cellXCount": 5,
+      "cellYCount": 3,
+      "footCount":3,
+      "footDelay":1000
     },
     {
       "gameTime": 90000,
       "qMax": 14,
       "starArr": [7, 9, 11],
       "passStar": 3,
-      "wordGroup": 1,
-      "cellXCount": 4,
-      "cellYCount": 10
+      "cellXCount": 5,
+      "cellYCount": 3,
+      "footCount":3,
+      "footDelay":1000
     },
     {
       "gameTime": 90000,
       "qMax": 14,
       "starArr": [7, 9, 11],
       "passStar": 3,
-      "wordGroup": 1,
-      "cellXCount": 4,
-      "cellYCount": 10
+      "cellXCount": 5,
+      "cellYCount": 3,
+      "footCount":3,
+      "footDelay":1000
     },
     {
       "gameTime": 90000,
       "qMax": 14,
       "starArr": [7, 9, 11],
       "passStar": 3,
-      "wordGroup": 1,
-      "cellXCount": 4,
-      "cellYCount": 10
+      "cellXCount": 5,
+      "cellYCount": 3,
+      "footCount":3,
+      "footDelay":1000
     },
     {
       "gameTime": 90000,
       "qMax": 14,
       "starArr": [7, 9, 11],
       "passStar": 3,
-      "wordGroup": 1,
-      "cellXCount": 4,
-      "cellYCount": 10
+      "cellXCount": 5,
+      "cellYCount": 3,
+      "footCount":3,
+      "footDelay":1000
     }
   ]
 }
