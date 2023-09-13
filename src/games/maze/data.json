@@ -1,0 +1,98 @@
+﻿{
+  "gameName": "رد پا",
+  "answerDelay": 1000,
+  "showAnswerStep": 200,
+  "soundLevel": 0.2,
+  "gameDef": [
+    {
+      "gameTime": 90000,
+      "qMax": 14,
+      "starArr": [7, 9, 11],
+      "passStar": 3,
+      "cellXCount": 5,
+      "cellYCount": 3,
+      "footCount":3,
+      "footDelay":1000
+    },
+    {
+      "gameTime": 90000,
+      "qMax": 14,
+      "starArr": [7, 9, 11],
+      "passStar": 3,
+      "cellXCount": 5,
+      "cellYCount": 3,
+      "footCount":3,
+      "footDelay":1000
+    },
+    {
+      "gameTime": 90000,
+      "qMax": 14,
+      "starArr": [7, 9, 11],
+      "passStar": 3,
+      "cellXCount": 5,
+      "cellYCount": 3,
+      "footCount":3,
+      "footDelay":1000
+    },
+    {
+      "gameTime": 90000,
+      "qMax": 14,
+      "starArr": [7, 9, 11],
+      "passStar": 3,
+      "cellXCount": 5,
+      "cellYCount": 3,
+      "footCount":3,
+      "footDelay":1000
+    },
+    {
+      "gameTime": 90000,
+      "qMax": 14,
+      "starArr": [7, 9, 11],
+      "passStar": 3,
+      "cellXCount": 5,
+      "cellYCount": 3,
+      "footCount":3,
+      "footDelay":1000
+    },
+    {
+      "gameTime": 90000,
+      "qMax": 14,
+      "starArr": [7, 9, 11],
+      "passStar": 3,
+      "cellXCount": 5,
+      "cellYCount": 3,
+      "footCount":3,
+      "footDelay":1000
+    },
+    {
+      "gameTime": 90000,
+      "qMax": 14,
+      "starArr": [7, 9, 11],
+      "passStar": 3,
+      "cellXCount": 5,
+      "cellYCount": 3,
+      "footCount":3,
+      "footDelay":1000
+    },
+    {
+      "gameTime": 90000,
+      "qMax": 14,
+      "starArr": [7, 9, 11],
+      "passStar": 3,
+      "cellXCount": 5,
+      "cellYCount": 3,
+      "footCount":3,
+      "footDelay":1000
+    },
+    {
+      "gameTime": 90000,
+      "qMax": 14,
+      "starArr": [7, 9, 11],
+      "passStar": 3,
+      "cellXCount": 5,
+      "cellYCount": 3,
+      "footCount":3,
+      "footDelay":1000
+    }
+  ]
+}
