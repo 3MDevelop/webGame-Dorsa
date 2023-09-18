@@ -29,16 +29,16 @@ const Help = () => {
 const MeshBox = (props) => {
   return (
     <div className="boxContainer " id={"bc" + (props.id)}>
-      <div className="boxBack" id={"d" + (props.id)} onClick={selF(props.id)} />
+      <div className="boxBack" id={"d" + (props.id)} onClick={selF(props.id)}>{props.id}</div>
     </div>
   )
 }
 
-const MeshRow = (props) => {
+const MeshColumn = (props) => {
   return (
     <div className="d-flex flex-column">
-      {Array.from(Array(props.columnCount).keys()).map((index) =>
-        <MeshBox key={index} id={(props.rowInd * props.columnCount) + index} />
+      {Array.from(Array(props.rowCount).keys()).map((index) =>
+        <MeshBox key={index} id={(props.columnInd * props.rowCount) + index} />
       )}
     </div>
   )
@@ -47,11 +47,19 @@ const MeshRow = (props) => {
 const BoxMesh = (props) => {
   return (
     <>
-      {Array.from(Array(props.rowCount).keys()).map((index) =>
-        <MeshRow key={index} rowInd={index} columnCount={props.columnCount} />)}
+      {Array.from(Array(props.rowCount).keys()).map((index) => (
+        <div className="d-flex" key={index}>
+          <MeshColumn  columnInd={index} rowCount={props.columnCount} />
+          {gData.gameDef[window.gameCurLevel].xStepLimit.indexOf(index + 1) !== -1 ? (
+            <div className='columnSeperator'/>
+          ) : null}
+        </div>
+      ))}
     </>
-  )
-}
+  );
+};
+
+
 
 
 const GameUI = () => {
