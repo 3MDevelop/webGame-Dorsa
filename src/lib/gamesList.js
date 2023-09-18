@@ -93,8 +93,8 @@ const GameList = (props) => {
 
         </div>
       </div>
-      <div className="listFooter d-flex justify-content-center align-items-center w-100 py-4">
-        <button type="button" className="btn btn-danger btn-sm txtEng" onClick={() => { delStorage()}}>Reset All Games</button>
+      <div className="listFooter d-flex justify-content-center align-items-center w-100 py-1">
+        {/* <button type="button" className="btn btn-danger btn-sm txtEng" onClick={() => { delStorage()}}>Reset All Games</button> */}
       </div>
     </div>
   );
