@@ -48,11 +48,52 @@ a {
 }
 
 .userProfile {
-  background-color: rgb(185, 255, 191);
-  width: 700px;
+  background-color: rgba(185, 255, 191, 0.3);
+  width: 800px;
   height: 600px;
   border-radius: 10px;
   overflow: hidden;
+}
+
+.userName {
+  font-size: 1.2rem;
+  font-weight: bolder;
+}
+
+.intItems {
+  transition: all 0.2s;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #474747;
+}
+
+.intItems:hover{
+  color: white;
+  background-color: gray;
+}
+
+.settingIcons {
+  font-size: 1.2rem;
+  transform: rotate(180deg);
+  border-radius: 5px;
+  padding: 0.3rem;
+}
+
+.settingIcons:hover {
+  color: white;
+  background-color: gray;
+}
+
+.adminContainer{
+  background-color: #dadada;
+}
+
+.adminLable{
+  color: #7a7a7a;
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+  margin-right: 0.6rem;
+  margin-top: 0.4rem;
 }
 
 /* List */

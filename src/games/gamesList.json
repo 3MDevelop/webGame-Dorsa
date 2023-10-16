@@ -1,94 +1,140 @@
 [
   {
     "name": "ضرب اعداد",
-    "path": "multiplication"
+    "path": "multiplication",
+    "gameType": 9,
+    "score": [4, 6, 3, 5, 7, 3, 5, 8, 0]
   },
   {
     "name": "املا نویسی",
-    "path": "spelling"
+    "path": "spelling",
+    "gameType": 9,
+    "score": [4, 6, 3, 5, 7, 3, 5, 8, 0]
   },
   {
     "name": "لغت نامه",
-    "path": "dictionary"
+    "path": "dictionary",
+    "gameType": 9,
+    "score": [4, 6, 3, 5, 7, 3, 5, 8, 0]
   },
   {
     "name": "فارسی نویسی",
-    "path": "persianWriting"
+    "path": "persianWriting",
+    "gameType": 9,
+    "score": [4, 6, 3, 5, 7, 3, 5, 8, 0]
   },
   {
     "name": "هزارتوی حروف",
-    "path": "alphabetMaze"
+    "path": "alphabetMaze",
+    "gameType": 9,
+    "score": [4, 6, 3, 5, 7, 3, 5, 8, 0]
   },
   {
     "name": "شکل یابی",
-    "path": "shapeFinding"
+    "path": "shapeFinding",
+    "gameType": 9,
+    "score": [4, 6, 3, 5, 7, 3, 5, 8, 0]
   },
   {
     "name": "رد پا",
-    "path": "footSteps"
+    "path": "footSteps",
+    "gameType": 9,
+    "score": [4, 6, 3, 5, 7, 3, 5, 8, 0]
   },
   {
     "name": "ماز",
-    "path": "maze"
+    "path": "maze",
+    "gameType": 9,
+    "score": [4, 6, 3, 5, 7, 3, 5, 8, 0]
   },
   {
     "name": "پازل سیاه و سفید",
-    "path": "bwPuzzle"
+    "path": "bwPuzzle",
+    "gameType": 9,
+    "score": [4, 6, 3, 5, 7, 3, 5, 8, 0]
   },
   {
     "name": "کشتی",
-    "path": "ship"
+    "path": "ship",
+    "gameType": 9,
+    "score": [4, 6, 3, 5, 7, 3, 5, 8, 0]
   },
   {
     "name": "جدول اعداد",
-    "path": "tableOfNumber"
+    "path": "tableOfNumber",
+    "gameType": 9,
+    "score": [4, 6, 3, 5, 7, 3, 5, 8, 0]
   },
   {
     "name": "محاسبه سریع",
-    "path": "fastCalculation"
+    "path": "fastCalculation",
+    "gameType": 1,
+    "score": [4, 6, 3, 5, 7, 3, 5, 8, 0]
   },
   {
     "name": "یازده",
-    "path": "11"
+    "path": "11",
+    "gameType": 1,
+    "score": [4, 6, 3, 5, 7, 3, 5, 8, 0]
   },
-  { 
+  {
     "name": "بیست",
-    "path": "20"
+    "path": "20",
+    "gameType": 1,
+    "score": [4, 6, 3, 5, 7, 3, 5, 8, 0]
   },
   {
     "name": "جانمایی",
-    "path": "locating"
+    "path": "locating",
+    "gameType": 2,
+    "score": [4, 6, 3, 5, 7, 3, 5, 8, 0]
   },
   {
     "name": "کلمات هم معنی",
-    "path": "sameMeaningWords"
+    "path": "sameMeaningWords",
+    "gameType": 3,
+    "score": [4, 6, 3, 5, 7, 3, 5, 8, 0]
   },
   {
     "name": "مستطیل رنگی",
-    "path": "coloredRectangle"
+    "path": "coloredRectangle",
+    "gameType": 2,
+    "score": [4, 6, 3, 5, 7, 3, 5, 8, 0]
   },
   {
     "name": "پیامک",
-    "path": "sms"
+    "path": "sms",
+    "gameType": 3,
+    "score": [4, 6, 3, 5, 7, 3, 5, 8, 0]
   },
   {
     "name": "اشکال مشابه",
-    "path": "similarShapes"
+    "path": "similarShapes",
+    "gameType": 2,
+    "score": [4, 6, 3, 5, 7, 3, 5, 8, 0]
   },
   {
     "name": "جابجایی اشکال",
-    "path": "shapesDisplacement"
+    "path": "shapesDisplacement",
+    "gameType": 2,
+    "score": [4, 6, 3, 5, 7, 3, 5, 8, 0]
   },
   {
     "name": "تبدیل واحد",
-    "path": "unitConversion"
+    "path": "unitConversion",
+    "gameType": 1,
+    "score": [4, 6, 3, 5, 7, 3, 5, 8, 0]
   },
   {
     "name": "چند روز",
-    "path": "fewdays"
+    "path": "fewdays",
+    "gameType": 1,
+    "score": [4, 6, 3, 5, 7, 3, 5, 8, 0]
   },
   {
     "name": "جادوی اشکال",
-    "path": "magicOfShapes"
+    "path": "magicOfShapes",
+    "gameType": 2,
+    "score": [4, 6, 3, 5, 7, 3, 5, 8, 0]
   }
 ]
