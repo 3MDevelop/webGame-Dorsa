@@ -1,4 +1,4 @@
-const LogIn = ({ setUserLogin, setUserData }) => {
+const LogIn = ({ setContentPage, setUserData }) => {
     const [username, setUsername] = React.useState('');
     const [password, setPassword] = React.useState('');
     const [ribbonText, setRibbonText] = React.useState('');
@@ -31,21 +31,21 @@ const LogIn = ({ setUserLogin, setUserData }) => {
                 return response.json();
             })
             .then((responseData) => {
-                /* console.info(responseData); */
                 if (responseData.success == '') {
                     setRibbonText(responseData.error)
                     setRibbonBack('bg-danger')
                 } else {
                     setRibbonText('Welcome')
                     setRibbonBack('bg-success')
-                    localStorage.setItem('uT', responseData.data.token)
+                    localStorage.setItem('uT', responseData.data.api_token)
                     localStorage.setItem('uN', responseData.data.name)
                     localStorage.setItem('uF', responseData.data.family)
                     localStorage.setItem('uI', responseData.data.userImage)
+                    localStorage.setItem('uA', responseData.data.is_admin)
                     setTimeout(() => {
-                        setUserLogin(true);
+                        console.info(responseData.data);
+                        setContentPage('profile');
                         setUserData(responseData.data);
-                        /* console.info(responseData.data); */
                     }, 300);
                 }
             });
@@ -87,23 +87,217 @@ const LogIn = ({ setUserLogin, setUserData }) => {
     );
 };
 
-const List = ({ gameList }) => {
+const AdminPanel = ({ hooshItems, setAllGamesList, setUserGameList }) => {
+    const [gameName, setGameName] = React.useState('')
+    const [gameAddress, setGameAddress] = React.useState('')
+    const [gameType, setGameType] = React.useState(1)
     return (
-        <div>
-
-            {gameList.map((val, index) => (
-                <div key={index}>{val.name}</div>
-            ))}
-
+        <div className='w-100 px-3 py-3 adminContainer'>
+            <form id='addGameForm' className='d-flex flex-row-reverse flex-wrap justify-content-between align-items-end h-100'>
+                <div className='text-end' style={{ width: '45%' }}>
+                    <label htmlFor="gameName " className='adminLable'>نام بازی </label>
+                    <input
+                        type="text"
+                        className="form-control form-control-sm text-end"
+                        id="gameName"
+                        onChange={(e) => setGameName(e.target.value)}
+                    />
+                </div>
+                <div className='text-end' style={{ width: '45%' }}>
+                    <label htmlFor="gameAddress " className='adminLable'>محل بازی</label>
+                    <input
+                        type="text"
+                        className="form-control form-control-sm"
+                        id="gameAddress"
+                        onChange={(e) => setGameAddress(e.target.value)}
+                    />
+                </div>
+                <div className='text-end'>
+                    <label htmlFor="gameType" className='adminLable'>نوع بازی</label>
+                    <select
+                        id="gameType"
+                        className="form-select form-select-sm text-end"
+                        onChange={(e) => setGameType(Math.abs(e.target.value) + 1)}
+                    >
+                        {
+                            hooshItems.map((val, index) => {
+                                return (
+                                    <option key={index} value={index}>{val}</option>
+                                )
+                            })
+                        }
+                    </select>
+                </div>
+                <div>
+                    <button
+                        type="button"
+                        className="btn btn-primary ms-4"
+                        onClick={() => {
+                            fetch("https://dorsav2.dorsapackage.com/api/v1/addGame", {
+                                method: "POST",
+                                headers: {
+                                    "Content-Type": "application/json",
+                                },
+                                body: JSON.stringify({
+                                    api_token: 'H7LHrwwSdgF6sbXmCGnQBwJMuEAIPzWdtWHR2mJc',
+                                    req: 'addGame',
+                                    gamePath: gameAddress,
+                                    gameName: gameName,
+                                    gameType: gameType,
+                                    score: [0]
+                                }),
+                            })
+                                .then((response) => {
+                                    if (!response.ok) {
+                                        throw new Error(`Request failed with status: ${response.status}`);
+                                    }
+                                    return response.json();
+                                })
+                                .then((addGameResponse) => {
+                                    console.info(addGameResponse)
+                                    fetch("https://dorsav2.dorsapackage.com/api/v1/gameList", {
+                                        method: "POST",
+                                        headers: {
+                                            "Content-Type": "application/json",
+                                        },
+                                        body: JSON.stringify({
+                                            api_token: localStorage.getItem('uT'),
+                                            req: 'gList'
+                                        }),
+                                    })
+                                        .then((response) => {
+                                            if (!response.ok) {
+                                                throw new Error(`Request failed with status: ${response.status}`);
+                                            }
+                                            return response.json();
+                                        })
+                                        .then((responseData) => {
+                                            setAllGamesList(responseData.data)
+                                            setUserGameList(responseData.data);
+                                            const form = document.getElementById('addGameForm')
+                                            form.reset();
+                                            setGameName('')
+                                            setGameAddress('')
+                                            setGameType(1)
+                                        });
+                                });
+                        }}>
+                        اضافه کردن بازی
+                    </button>
+                </div>
+            </form>
         </div>
     )
 }
 
-const UserProfile = ({ setUserLogin, userData }) => {
+const List = ({ gameList, adminSit, setAllGamesList, setUserGameList }) => {
+    const levelColor = ["#31ad76", "#95bf3d", "#0abbc5", "#C35BA2", "#D480B3", "#F173AC", "#E95752", "#F58220", "#FBAE49"]
+    console.info(gameList)
+    return (
+        <div>
+            {gameList.map((val, index) => {
+                val.score = [3, 3, 3, 3, 3, 3, 3, 3, 3]
+                return (
+                    <div key={index}
+                        className='w-100 mb-2 rounded-3 d-flex flex-row-reverse justify-conten-between align-items-center overflow-hidden'
+                        style={{ backgroundColor: "#f4f4f4", height: '85px' }}
+                    >
+                        <div className='h-100 ms-2' style={{ backgroundColor: levelColor[val.score.length - 1], width: '5px' }}></div>
+                        <div className='rounded-3 overflow-hidden'>
+                            <img src={`games/${val.path}/icon.png`} height='70px' />
+                        </div>
+                        <div className="me-3 d-flex flex-column ms-auto">
+                            <div className='fw-bolder text-muted' style={{ fontSize: '1.4rem' }}>
+                                {val.name}
+                            </div>
+                            <div className='d-flex flex-row-reverse mt-2'>
+                                {
+                                    val.score.map((val, index) => (
+                                        <div key={index} className='text-white ms-1 aspect1 d-flex justify-content-center align-items-center' style={{ backgroundColor: levelColor[index] }}>{val}</div>
+                                    ))
+                                }
+                            </div>
+                        </div>
+                        {
+                            (adminSit) ? <div className='fas fa-close h-100 d-flex align-items-center justify-content-center text-white px-3'
+
+                                style={{
+                                    backgroundColor: 'rgba(220,220,220,1)',
+                                    fontSize: '1.3rem'
+                                }}
+                                onClick={() => {
+                                    console.info('ops')
+                                    fetch("https://dorsav2.dorsapackage.com/api/v1/removeGame", {
+                                        method: "POST",
+                                        headers: {
+                                            "Content-Type": "application/json",
+                                        },
+                                        body: JSON.stringify({
+                                            api_token: 'H7LHrwwSdgF6sbXmCGnQBwJMuEAIPzWdtWHR2mJc',
+                                            req: 'removeGame',
+                                            gamePath: val.path
+                                        }),
+                                    })
+                                        .then((response) => {
+                                            if (!response.ok) {
+                                                throw new Error(`Request failed with status: ${response.status}`);
+                                            }
+                                            return response.json();
+                                        })
+                                        .then((responseData) => {
+                                            console.info(responseData)
+                                            fetch("https://dorsav2.dorsapackage.com/api/v1/gameList", {
+                                                method: "POST",
+                                                headers: {
+                                                    "Content-Type": "application/json",
+                                                },
+                                                body: JSON.stringify({
+                                                    api_token: localStorage.getItem('uT'),
+                                                    req: 'gList'
+                                                }),
+                                            })
+                                                .then((response) => {
+                                                    if (!response.ok) {
+                                                        throw new Error(`Request failed with status: ${response.status}`);
+                                                    }
+                                                    return response.json();
+                                                })
+                                                .then((responseData) => {
+                                                    /*  console.info(responseData.data[1].score) */
+                                                    /* responseData.data[0].score = [0] */
+                                                    setAllGamesList(responseData.data)
+                                                    setUserGameList(responseData.data);
+                                                });
+                                        });
+                                }}
+                            /> : null
+                        }
+                        <div
+                            className='fas fa-play h-100 d-flex align-items-center justify-content-center text-white px-3'
+                            style={{
+                                backgroundColor: levelColor[val.score.length - 1],
+                                transform: 'rotate(180deg)',
+                                fontSize: '1.3rem'
+                            }}
+                            onClick={() => {
+                                console.info(val.path);
+                                console.info(val.score);
+                                localStorage.setItem(val.path, JSON.stringify(val.score));
+                                window.location.href = "./games/" + val.path;
+                            }}
+                        />
+                    </div>
+                )
+            })}
+        </div>
+    )
+}
+
+const UserProfile = ({ setContentPage, userData }) => {
     const [allGamesList, setAllGamesList] = React.useState([]);
     const [userGameList, setUserGameList] = React.useState([]);
     const [selectedIndex, setSelectedIndex] = React.useState(-1);
-    const [userAdmin, setUserAdmin] = React.useState(true)
+    const [userAdmin, setUserAdmin] = React.useState(false)
     const [userImage, setUserImage] = React.useState('')
     const [userName, setUserName] = React.useState('')
     const [userFamily, setUserFamily] = React.useState('')
@@ -113,12 +307,11 @@ const UserProfile = ({ setUserLogin, userData }) => {
 
     const hooshItems = new Array(' منطقی ریاضی', 'دیداری فضایی', 'کلامی', 'موسیقایی', 'بدنی جنبشی', 'درون فردی', 'میان فردی', 'طبیعت گرا')
 
-
     const listFilter = (index) => {
         if (selectedIndex == index) {
             setSelectedIndex(-1)
             setUserGameList(allGamesList)
-            
+
         } else {
             setSelectedIndex(index)
             let tempObj = []
@@ -134,31 +327,30 @@ const UserProfile = ({ setUserLogin, userData }) => {
 
     }
 
-    React.useEffect(() => {
+    /* React.useEffect(() => {
         fetch("./games/gamesList.json")
             .then((response) => response.json())
             .then((data) => {
                 setAllGamesList(data)
                 setUserGameList(data);
             });
-    }, []);
+    }, []); */
 
-    /* React.useEffect(() => {
+    React.useEffect(() => {
         setUserImage(userData.userImage);
         setUserName(userData.name);
         setUserFamily(userData.family);
-        setUserToken(userData.token);
-        (userData.userType == 'admin') ? setUserAdmin(true) : setUserAdmin(false);
-        setUserAdmin(true)
-    
+        setUserToken(userData.api_token);
+        (userData.is_admin) ? setUserAdmin(true) : setUserAdmin(false);
+
         fetch("https://dorsav2.dorsapackage.com/api/v1/gameList", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                token: localStorage.getItem('uT'),
-                req: "gList"
+                api_token: localStorage.getItem('uT'),
+                req: 'gList'
             }),
         })
             .then((response) => {
@@ -168,10 +360,13 @@ const UserProfile = ({ setUserLogin, userData }) => {
                 return response.json();
             })
             .then((responseData) => {
-                console.info(responseData)
+                /*  console.info(responseData.data[1].score) */
+                /* responseData.data[0].score = [0] */
+                setAllGamesList(responseData.data)
+                setUserGameList(responseData.data);
             });
     }, []);
-    */
+
 
     return (
         <div className='container-fluid p-0 m-0 w-100 h-100 d-flex flex-row-reverse'>
@@ -184,7 +379,7 @@ const UserProfile = ({ setUserLogin, userData }) => {
                     {
                         hooshItems.map((val, index) => {
                             return (
-                                <div key={index} className='w-100 text-end px-4 my-1 intItems' onClick={() => listFilter(index + 1)}>هوش {val}</div>
+                                <div key={index} className='w-100 text-end px-4 my-1 intItems' onClick={() => listFilter(index + 1)}>{val}</div>
                             )
                         })
                     }
@@ -192,7 +387,7 @@ const UserProfile = ({ setUserLogin, userData }) => {
                 <div className="mt-3 px-3 text-muted w-100 d-flex">
                     <div className='fas fa-sign-out settingIcons me-3' onClick={() => {
                         localStorage.clear()
-                        setUserLogin(false)
+                        setContentPage('login')
                     }} />
                     {
                         (userAdmin) ? <div className='fas fa-cog settingIcons' onClick={() => {
@@ -203,76 +398,39 @@ const UserProfile = ({ setUserLogin, userData }) => {
             </div>
             <div className='col-9'>
                 <div className='bg-white h-100 border ms-3 rounded-3 overflow-hidden d-flex flex-column justify-content-between'>
-                    {
-                        (showAdminConfig) ? <div className='w-100 px-3 py-3 adminContainer'>
-                            <form className='d-flex flex-row-reverse flex-wrap justify-content-between align-items-center h-100'>
-                                <div className='text-end' style={{ width: '45%' }}>
-                                    <label htmlFor="gameName " className='adminLable'>نام بازی </label>
-                                    <input
-                                        type="text"
-                                        className="form-control form-control-sm"
-                                        id="gameName"
-                                        onChange={(e) => setGameName(e.target.value)}
-                                    />
-                                </div>
-                                <div className='text-end' style={{ width: '45%' }}>
-                                    <label htmlFor="gameAddress " className='adminLable'>محل بازی</label>
-                                    <input
-                                        type="text"
-                                        className="form-control form-control-sm"
-                                        id="gameAddress"
-                                        onChange={(e) => setGameAddress(e.target.value)}
-                                    />
-                                </div>
-                                <div className='text-end'>
-                                    <label htmlFor="gameType" className='adminLable'>نوع بازی</label>
-                                    <select
-                                        id="gameType"
-                                        className="form-select form-select-sm text-end"
-                                        onChange={(e) => setGameType(e.target.value)}
-                                    >
-                                        {
-                                            hooshItems.map((val, index) => {
-                                                return (
-                                                    <option key={index} value={index}>{val}</option>
-                                                )
-                                            })
-                                        }
-                                    </select>
-                                </div>
-
-                            </form>
-                        </div>
-                            : null
-                    }
-
-                    <div className='flex-fill p-2 text-end'>
+                    {(showAdminConfig) ? <AdminPanel hooshItems={hooshItems} setUserGameList={setUserGameList} setAllGamesList={setAllGamesList} /> : null}
+                    <div className='flex-fill p-2 text-end' style={{ overflowY: 'auto' }}>
                         {
-                            (userGameList.length != 0) ? <List gameList={userGameList} /> : null
+                            (userGameList.length != 0) ? <List gameList={userGameList} adminSit={userAdmin} setUserGameList={setUserGameList} setAllGamesList={setAllGamesList} /> : null
                         }
                     </div>
                 </div>
             </div>
-
-
-
-            {/* <div id='pTxt'>UserProfile</div>
-             */}
         </div>
     );
 };
 
 const MainContainer = () => {
-    const [userLogin, setUserLogin] = React.useState(false);
+    const [contentPage, setContentPage] = React.useState('login');
     const [userData, setUserData] = React.useState('');
 
     React.useEffect(() => {
-        (localStorage.getItem('uT') != null) ? setUserLogin(true) : null
-    }, [userLogin]);
+        if (localStorage.getItem('uT') != null) {
+            setUserData({
+                name: localStorage.getItem('uN'),
+                family: localStorage.getItem('uF'),
+                userImage: localStorage.getItem('uI'),
+                api_token: localStorage.getItem('uT'),
+                is_admin: localStorage.getItem('uA')
+            })
+            setContentPage('profile')
+        }
+    }, [contentPage]);
 
     return (
-        <div className={`d-flex flex-column align-items-center ${userLogin ? 'userProfile py-3' : 'login py-2'}`}>
-            {userLogin ? <UserProfile setUserLogin={setUserLogin} setUserData={setUserData} userData={userData} /> : <LogIn setUserLogin={setUserLogin} setUserData={setUserData} />}
+        <div className={`widthChecker d-flex flex-column align-items-center ${(contentPage != 'login') ? 'userProfile py-3' : 'login py-2'}`}>
+            {(contentPage == 'login') ? <LogIn setContentPage={setContentPage} setUserData={setUserData} /> : null}
+            {(contentPage == 'profile') ? <UserProfile setContentPage={setContentPage} setUserData={setUserData} userData={userData} /> : null}
         </div>
     );
 };

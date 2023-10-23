@@ -34,6 +34,12 @@ a {
 
 /*  login page */
 
+@media only screen and (max-width: 600px) {
+  .widthChecker{
+    display: none !important;
+    content: "هوش ";
+  }
+}
 .mainContainer {
   transition: all 0.5s;
 }
@@ -61,13 +67,24 @@ a {
 }
 
 .intItems {
+  direction: rtl;
+  text-align: right;
   transition: all 0.2s;
   font-size: 1rem;
   font-weight: 600;
   color: #474747;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
-.intItems:hover{
+@media only screen and (min-width: 800px) {
+  .intItems:before {
+    content: "هوش ";
+  }
+}
+
+.intItems:hover {
   color: white;
   background-color: gray;
 }
@@ -84,16 +101,23 @@ a {
   background-color: gray;
 }
 
-.adminContainer{
+.adminContainer {
   background-color: #dadada;
 }
 
-.adminLable{
+.adminLable {
   color: #7a7a7a;
   font-size: 1rem;
   margin-bottom: 0.4rem;
   margin-right: 0.6rem;
   margin-top: 0.4rem;
+}
+
+.aspect1 {
+  width: 20px;
+  height: 20px;
+  font-size: 1rem;
+  border-radius: 3px;
 }
 
 /* List */
