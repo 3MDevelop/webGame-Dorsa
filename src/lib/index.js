@@ -147,7 +147,6 @@ const AdminPanel = ({ hooshItems, setAllGamesList, setUserGameList }) => {
                                     return response.json();
                                 })
                                 .then((addGameResponse) => {
-                                    console.info(addGameResponse)
                                     setAllGamesList(addGameResponse.data)
                                     setUserGameList(addGameResponse.data);
                                 });
@@ -195,7 +194,6 @@ const List = ({ gameList, userData, setAllGamesList, setUserGameList }) => {
                                     fontSize: '1.3rem'
                                 }}
                                 onClick={() => {
-                                    console.info('ops')
                                     fetch("https://dorsav2.dorsapackage.com/api/v1/removeGame", {
                                         method: "POST",
                                         headers: {
@@ -214,9 +212,6 @@ const List = ({ gameList, userData, setAllGamesList, setUserGameList }) => {
                                             return response.json();
                                         })
                                         .then((responseData) => {
-                                            console.info(responseData)
-                                            /*  console.info(responseData.data[1].score) */
-                                            /* responseData.data[0].score = [0] */
                                             setAllGamesList(responseData.data)
                                             setUserGameList(responseData.data);
                                         });
@@ -231,8 +226,6 @@ const List = ({ gameList, userData, setAllGamesList, setUserGameList }) => {
                                 fontSize: '1.3rem'
                             }}
                             onClick={() => {
-                                console.info(val.path);
-                                console.info(val.score);
                                 localStorage.setItem(val.path, JSON.stringify(val.score));
                                 window.location.href = "./games/" + val.path;
                             }}
@@ -288,7 +281,6 @@ const UserProfile = ({ setContentPage, userData, setUserData }) => {
                 return response.json();
             })
             .then((responseData) => {
-                console.info(responseData.data)
                 setUserData(responseData.data)
                 setAllGamesList(responseData.data.dataGame)
                 setUserGameList(responseData.data.dataGame);
