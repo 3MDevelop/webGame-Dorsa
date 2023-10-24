@@ -71,7 +71,6 @@ const LogIn = ({ setContentPage }) => {
                 <div type="submit" onClick={() => userAuth(username, password)} className="btn btn-info w-50 py-1 px-2 mx-auto">login</div>
                 <div id='statusRibbon' className={`text-center mt-3 text-white ${ribbonBack}`}>{ribbonText}</div>
             </form>
-
             <div className="text-muted w-50 d-flex justify-content-between align-items-center fs-4 mt-auto">
                 <div className="fab fa-google text-danger" style={{ fontSize: '1.25rem ' }} />
                 <div className="fab fa-microsoft text-info" />
@@ -81,7 +80,7 @@ const LogIn = ({ setContentPage }) => {
     );
 };
 
-const AdminPanel = ({ hooshItems }) => {
+const AdminPanel = ({ hooshItems, setAllGamesList, setUserGameList }) => {
     const [gameName, setGameName] = React.useState('')
     const [gameAddress, setGameAddress] = React.useState('')
     const [gameType, setGameType] = React.useState(1)
@@ -149,8 +148,8 @@ const AdminPanel = ({ hooshItems }) => {
                                 })
                                 .then((addGameResponse) => {
                                     console.info(addGameResponse)
-                                    /* setAllGamesList(addGameResponse.data.dataGame)
-                                     setUserGameList(addGameResponse.data.dataGame);*/
+                                    setAllGamesList(addGameResponse.data)
+                                    setUserGameList(addGameResponse.data);
                                 });
                         }}>
                         اضافه کردن بازی
@@ -250,7 +249,6 @@ const UserProfile = ({ setContentPage, userData, setUserData }) => {
     const [userGameList, setUserGameList] = React.useState([]);
     const [selectedIndex, setSelectedIndex] = React.useState(-1);
     const [showAdminConfig, setShowAdminConfig] = React.useState(false)
-
     const hooshItems = new Array(' منطقی ریاضی', 'دیداری فضایی', 'کلامی', 'موسیقایی', 'بدنی جنبشی', 'درون فردی', 'میان فردی', 'طبیعت گرا')
 
     const listFilter = (index) => {
@@ -270,17 +268,7 @@ const UserProfile = ({ setContentPage, userData, setUserData }) => {
             })
             setUserGameList(tempObj)
         }
-
     }
-
-    /* React.useEffect(() => {
-        fetch("./games/gamesList.json")
-            .then((response) => response.json())
-            .then((data) => {
-                setAllGamesList(data)
-                setUserGameList(data);
-            });
-    }, []); */
 
     React.useEffect(() => {
         fetch("https://dorsav2.dorsapackage.com/api/v1/gameList", {
@@ -300,12 +288,12 @@ const UserProfile = ({ setContentPage, userData, setUserData }) => {
                 return response.json();
             })
             .then((responseData) => {
+                console.info(responseData.data)
                 setUserData(responseData.data)
                 setAllGamesList(responseData.data.dataGame)
                 setUserGameList(responseData.data.dataGame);
             });
     }, []);
-
 
     return (
         <div className='container-fluid p-0 m-0 w-100 h-100 d-flex flex-row-reverse'>
@@ -337,7 +325,7 @@ const UserProfile = ({ setContentPage, userData, setUserData }) => {
             </div>
             <div className='col-9'>
                 <div className='bg-white h-100 border ms-3 rounded-3 overflow-hidden d-flex flex-column justify-content-between'>
-                    {(showAdminConfig) ? <AdminPanel hooshItems={hooshItems} /> : null}
+                    {(showAdminConfig) ? <AdminPanel hooshItems={hooshItems} setAllGamesList={setAllGamesList} setUserGameList={setUserGameList} /> : null}
                     <div className='flex-fill p-2 text-end' style={{ overflowY: 'auto' }}>
                         {
                             (userGameList.length != 0) ? <List gameList={userGameList} setUserGameList={setUserGameList} setAllGamesList={setAllGamesList} userData={userData} /> : null
