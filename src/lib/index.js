@@ -1,4 +1,4 @@
-const LogIn = ({ setContentPage, setUserData }) => {
+const LogIn = ({ setContentPage }) => {
     const [username, setUsername] = React.useState('');
     const [password, setPassword] = React.useState('');
     const [ribbonText, setRibbonText] = React.useState('');
@@ -38,14 +38,8 @@ const LogIn = ({ setContentPage, setUserData }) => {
                     setRibbonText('Welcome')
                     setRibbonBack('bg-success')
                     localStorage.setItem('uT', responseData.data.api_token)
-                    localStorage.setItem('uN', responseData.data.name)
-                    localStorage.setItem('uF', responseData.data.family)
-                    localStorage.setItem('uI', responseData.data.userImage)
-                    localStorage.setItem('uA', responseData.data.is_admin)
                     setTimeout(() => {
-                        console.info(responseData.data);
                         setContentPage('profile');
-                        setUserData(responseData.data);
                     }, 300);
                 }
             });
@@ -87,7 +81,7 @@ const LogIn = ({ setContentPage, setUserData }) => {
     );
 };
 
-const AdminPanel = ({ hooshItems, setAllGamesList, setUserGameList }) => {
+const AdminPanel = ({ hooshItems }) => {
     const [gameName, setGameName] = React.useState('')
     const [gameAddress, setGameAddress] = React.useState('')
     const [gameType, setGameType] = React.useState(1)
@@ -139,7 +133,7 @@ const AdminPanel = ({ hooshItems, setAllGamesList, setUserGameList }) => {
                                     "Content-Type": "application/json",
                                 },
                                 body: JSON.stringify({
-                                    api_token: 'H7LHrwwSdgF6sbXmCGnQBwJMuEAIPzWdtWHR2mJc',
+                                    api_token: localStorage.getItem('uT'),
                                     req: 'addGame',
                                     gamePath: gameAddress,
                                     gameName: gameName,
@@ -155,31 +149,8 @@ const AdminPanel = ({ hooshItems, setAllGamesList, setUserGameList }) => {
                                 })
                                 .then((addGameResponse) => {
                                     console.info(addGameResponse)
-                                    fetch("https://dorsav2.dorsapackage.com/api/v1/gameList", {
-                                        method: "POST",
-                                        headers: {
-                                            "Content-Type": "application/json",
-                                        },
-                                        body: JSON.stringify({
-                                            api_token: localStorage.getItem('uT'),
-                                            req: 'gList'
-                                        }),
-                                    })
-                                        .then((response) => {
-                                            if (!response.ok) {
-                                                throw new Error(`Request failed with status: ${response.status}`);
-                                            }
-                                            return response.json();
-                                        })
-                                        .then((responseData) => {
-                                            setAllGamesList(responseData.data)
-                                            setUserGameList(responseData.data);
-                                            const form = document.getElementById('addGameForm')
-                                            form.reset();
-                                            setGameName('')
-                                            setGameAddress('')
-                                            setGameType(1)
-                                        });
+                                    /* setAllGamesList(addGameResponse.data.dataGame)
+                                     setUserGameList(addGameResponse.data.dataGame);*/
                                 });
                         }}>
                         اضافه کردن بازی
@@ -190,9 +161,8 @@ const AdminPanel = ({ hooshItems, setAllGamesList, setUserGameList }) => {
     )
 }
 
-const List = ({ gameList, adminSit, setAllGamesList, setUserGameList }) => {
+const List = ({ gameList, userData, setAllGamesList, setUserGameList }) => {
     const levelColor = ["#31ad76", "#95bf3d", "#0abbc5", "#C35BA2", "#D480B3", "#F173AC", "#E95752", "#F58220", "#FBAE49"]
-    console.info(gameList)
     return (
         <div>
             {gameList.map((val, index) => {
@@ -219,7 +189,7 @@ const List = ({ gameList, adminSit, setAllGamesList, setUserGameList }) => {
                             </div>
                         </div>
                         {
-                            (adminSit) ? <div className='fas fa-close h-100 d-flex align-items-center justify-content-center text-white px-3'
+                            (userData.is_admin) ? <div className='fas fa-close h-100 d-flex align-items-center justify-content-center text-white px-3'
 
                                 style={{
                                     backgroundColor: 'rgba(220,220,220,1)',
@@ -233,7 +203,7 @@ const List = ({ gameList, adminSit, setAllGamesList, setUserGameList }) => {
                                             "Content-Type": "application/json",
                                         },
                                         body: JSON.stringify({
-                                            api_token: 'H7LHrwwSdgF6sbXmCGnQBwJMuEAIPzWdtWHR2mJc',
+                                            api_token: localStorage.getItem('uT'),
                                             req: 'removeGame',
                                             gamePath: val.path
                                         }),
@@ -246,28 +216,10 @@ const List = ({ gameList, adminSit, setAllGamesList, setUserGameList }) => {
                                         })
                                         .then((responseData) => {
                                             console.info(responseData)
-                                            fetch("https://dorsav2.dorsapackage.com/api/v1/gameList", {
-                                                method: "POST",
-                                                headers: {
-                                                    "Content-Type": "application/json",
-                                                },
-                                                body: JSON.stringify({
-                                                    api_token: localStorage.getItem('uT'),
-                                                    req: 'gList'
-                                                }),
-                                            })
-                                                .then((response) => {
-                                                    if (!response.ok) {
-                                                        throw new Error(`Request failed with status: ${response.status}`);
-                                                    }
-                                                    return response.json();
-                                                })
-                                                .then((responseData) => {
-                                                    /*  console.info(responseData.data[1].score) */
-                                                    /* responseData.data[0].score = [0] */
-                                                    setAllGamesList(responseData.data)
-                                                    setUserGameList(responseData.data);
-                                                });
+                                            /*  console.info(responseData.data[1].score) */
+                                            /* responseData.data[0].score = [0] */
+                                            setAllGamesList(responseData.data)
+                                            setUserGameList(responseData.data);
                                         });
                                 }}
                             /> : null
@@ -293,16 +245,10 @@ const List = ({ gameList, adminSit, setAllGamesList, setUserGameList }) => {
     )
 }
 
-const UserProfile = ({ setContentPage, userData }) => {
+const UserProfile = ({ setContentPage, userData, setUserData }) => {
     const [allGamesList, setAllGamesList] = React.useState([]);
     const [userGameList, setUserGameList] = React.useState([]);
     const [selectedIndex, setSelectedIndex] = React.useState(-1);
-    const [userAdmin, setUserAdmin] = React.useState(false)
-    const [userImage, setUserImage] = React.useState('')
-    const [userName, setUserName] = React.useState('')
-    const [userFamily, setUserFamily] = React.useState('')
-    const [userToken, setUserToken] = React.useState('')
-    const [gameName, setGameName] = React.useState('')
     const [showAdminConfig, setShowAdminConfig] = React.useState(false)
 
     const hooshItems = new Array(' منطقی ریاضی', 'دیداری فضایی', 'کلامی', 'موسیقایی', 'بدنی جنبشی', 'درون فردی', 'میان فردی', 'طبیعت گرا')
@@ -337,12 +283,6 @@ const UserProfile = ({ setContentPage, userData }) => {
     }, []); */
 
     React.useEffect(() => {
-        setUserImage(userData.userImage);
-        setUserName(userData.name);
-        setUserFamily(userData.family);
-        setUserToken(userData.api_token);
-        (userData.is_admin) ? setUserAdmin(true) : setUserAdmin(false);
-
         fetch("https://dorsav2.dorsapackage.com/api/v1/gameList", {
             method: "POST",
             headers: {
@@ -360,10 +300,9 @@ const UserProfile = ({ setContentPage, userData }) => {
                 return response.json();
             })
             .then((responseData) => {
-                /*  console.info(responseData.data[1].score) */
-                /* responseData.data[0].score = [0] */
-                setAllGamesList(responseData.data)
-                setUserGameList(responseData.data);
+                setUserData(responseData.data)
+                setAllGamesList(responseData.data.dataGame)
+                setUserGameList(responseData.data.dataGame);
             });
     }, []);
 
@@ -372,9 +311,9 @@ const UserProfile = ({ setContentPage, userData }) => {
         <div className='container-fluid p-0 m-0 w-100 h-100 d-flex flex-row-reverse'>
             <div id='profileSidebar' className='col-3 h-100 d-flex flex-column justify-content-between align-items-center py-2 overflow-hidden'>
                 {/* <img src={userImage} style={{ borderRadius: '50%' }} width='50%' className='mt-3 border border-2 border-info' /> */}
-                <img src={localStorage.getItem('uI')} style={{ borderRadius: '50%' }} width='50%' className='mt-3 border border-2 border-info' />
+                <img src={userData.userImage} style={{ borderRadius: '50%' }} width='50%' className='mt-3 border border-2 border-info' />
                 {/* <div className='mt-3 mb-4 w-100 text-center userName overflow-hidden'>{userName} {userFamily}</div> */}
-                <div className='mt-3 mb-4 w-100 text-center userName overflow-hidden'>{localStorage.getItem('uN')} {localStorage.getItem('uF')}</div>
+                <div className='mt-3 mb-4 w-100 text-center userName overflow-hidden'>{userData.name} {userData.family}</div>
                 <div className='w-100 border-info border-1 border-top border-bottom py-2 mt-auto' style={{ backgroundColor: 'rgba(255,255,255,0.2)' }}>
                     {
                         hooshItems.map((val, index) => {
@@ -390,7 +329,7 @@ const UserProfile = ({ setContentPage, userData }) => {
                         setContentPage('login')
                     }} />
                     {
-                        (userAdmin) ? <div className='fas fa-cog settingIcons' onClick={() => {
+                        (userData.is_admin) ? <div className='fas fa-cog settingIcons' onClick={() => {
                             (showAdminConfig) ? setShowAdminConfig(false) : setShowAdminConfig(true)
                         }} /> : null
                     }
@@ -398,10 +337,10 @@ const UserProfile = ({ setContentPage, userData }) => {
             </div>
             <div className='col-9'>
                 <div className='bg-white h-100 border ms-3 rounded-3 overflow-hidden d-flex flex-column justify-content-between'>
-                    {(showAdminConfig) ? <AdminPanel hooshItems={hooshItems} setUserGameList={setUserGameList} setAllGamesList={setAllGamesList} /> : null}
+                    {(showAdminConfig) ? <AdminPanel hooshItems={hooshItems} /> : null}
                     <div className='flex-fill p-2 text-end' style={{ overflowY: 'auto' }}>
                         {
-                            (userGameList.length != 0) ? <List gameList={userGameList} adminSit={userAdmin} setUserGameList={setUserGameList} setAllGamesList={setAllGamesList} /> : null
+                            (userGameList.length != 0) ? <List gameList={userGameList} setUserGameList={setUserGameList} setAllGamesList={setAllGamesList} userData={userData} /> : null
                         }
                     </div>
                 </div>
@@ -416,13 +355,6 @@ const MainContainer = () => {
 
     React.useEffect(() => {
         if (localStorage.getItem('uT') != null) {
-            setUserData({
-                name: localStorage.getItem('uN'),
-                family: localStorage.getItem('uF'),
-                userImage: localStorage.getItem('uI'),
-                api_token: localStorage.getItem('uT'),
-                is_admin: localStorage.getItem('uA')
-            })
             setContentPage('profile')
         }
     }, [contentPage]);
