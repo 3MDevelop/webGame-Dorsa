@@ -14,7 +14,7 @@ resetBox = (inVal) => {
       document.getElementById('d' + inID).classList = ['boxBack']
       document.getElementById('d' + inID).innerHTML = ''
     })
-  }else{
+  } else {
   }
   qArr.map((inID) => {
     console.info(inID)
@@ -55,7 +55,9 @@ selectBox = function (inID) {
     element = document.getElementById('d' + inID)
     element.classList = ['MeshBox']
     document.getElementById('bc' + inID).style.backgroundColor = '#e4e4e4'
-    ansArr.push(inID)
+    if (!isValInArr(ansArr, inID)) {
+      ansArr.push(inID)
+    }
     ansCheck()
   }
 }
