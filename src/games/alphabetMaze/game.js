@@ -79,13 +79,14 @@ selectID = (selectSit, inID) => {
 }
 
 selectBox = (inID) => {
-  if (inID == ansArr[ansArr.length - 1]) {
-    selectID(false, inID)
-  } else {
-    (chConti(inID) && boxArr[inID] == ansWord[ansString.length]) ? selectID(true, inID) : showAnswer(false)
-    if (ansWord.length == ansString.length) showAnswer(true)
+  if(qMode){
+    if (inID == ansArr[ansArr.length - 1]) {
+      selectID(false, inID)
+    } else {
+      (chConti(inID) && boxArr[inID] == ansWord[ansString.length]) ? selectID(true, inID) : showAnswer(false)
+      if (ansWord.length == ansString.length) showAnswer(true)
+    }
   }
-
 }
 
 const findNextPos = (inInd) => {
