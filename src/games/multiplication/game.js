@@ -70,6 +70,7 @@ function selectFunc(inID) {
         setScore(1)
         trueCount++
       } else if (selectedID > -1 && stArr[inID][1] != stArr[selectedID][1]) {
+        setScore(-1)
         showPos(inID, 5, stArr[inID][0])
         showPos(selectedID, 5, stArr[selectedID][0])
         ansTime = false
