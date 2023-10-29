@@ -6,6 +6,7 @@ const sound = new Audio('./sound.mp3');
 
 
 ansCheck = function (inNum) {
+  console.info(inNum)
   if (qMode) {
     qMode = false
     if (inNum == tInd) {
@@ -25,8 +26,18 @@ ansCheck = function (inNum) {
   }
 };
 
-setAnsBox=(count)=>{
-  console.info(count)
+setAnsBox = (count) => {
+  if (count==3) {
+    document.getElementById('optCont').classList.add('flex-column')
+  }else{
+    document.getElementById('optCont').classList.remove('flex-column')
+  }
+  for (let index = 0; index < count; index++) {
+    var iDiv = document.createElement('div');
+    iDiv.className = 'optBox';
+    iDiv.onclick = () => ansCheck(index)
+    document.getElementById('optCont').appendChild(iDiv);
+  }
 }
 
 gFunc = () => {
@@ -45,7 +56,7 @@ fQuestion = function () {
   fetch("wordList.json")
     .then(response => response.json())
     .then(json => {
-      wordSource = arrRandomSelect(json.wordGroups[(gData.gameDef[window.gameCurLevel].qGroup)-1], gData.gameDef[window.gameCurLevel].qMax)
+      wordSource = arrRandomSelect(json.wordGroups[(gData.gameDef[window.gameCurLevel].qGroup) - 1], gData.gameDef[window.gameCurLevel].qMax)
       setAnsBox(wordSource[0].length)
       gFunc()
     });

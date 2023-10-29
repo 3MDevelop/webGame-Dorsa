@@ -36,12 +36,7 @@ class GameUI extends React.Component {
     return (
       <div className="game flex-wrap">
         <div className='qBox' />
-        <div className='optBoxContainer'>
-          <div className='optBox' onClick={aClick(0)} />
-          <div className='optBox' onClick={aClick(1)} />
-          <div className='optBox' onClick={aClick(2)} />
-          <div className='optBox' onClick={aClick(3)} />
-        </div>
+        <div id='optCont' className='optCont d-flex flex-wrap justify-content-around align-items-center' />
       </div>
     )
   }

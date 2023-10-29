@@ -5,7 +5,7 @@
   "picArr": [146, 48, 45, 50],
   "gameDef": [
     {
-      "gameTime": 900000,
+      "gameTime": 90,
       "qMax": 25,
       "starArr": [18, 20, 22],
       "passStar": 3,
