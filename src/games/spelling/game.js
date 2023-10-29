@@ -25,13 +25,19 @@ ansCheck = function (inNum) {
   }
 };
 
+setAnsBox=(count)=>{
+  console.info(count)
+}
+
 gFunc = () => {
   qMode = true
   tAns = wordSource[qCount - 1][0]
-  qArr = arrRandomSelect(wordSource[qCount - 1], 4)
+  qArr = arrRandomSelect(wordSource[qCount - 1], wordSource[qCount - 1].length)
   tInd = valInArrIndArr(qArr, tAns)
-  console.info(tInd)
-  qArr.map((val, index) => document.getElementsByClassName('optBox')[index].innerHTML = val)
+  console.info(qArr.length)
+  qArr.map((val, index) => {
+    document.getElementsByClassName('optBox')[index].innerHTML = val
+  })
 }
 
 fQuestion = function () {
@@ -39,7 +45,8 @@ fQuestion = function () {
   fetch("wordList.json")
     .then(response => response.json())
     .then(json => {
-      wordSource = arrRandomSelect(json, gData.gameDef[window.gameCurLevel].qMax)
+      wordSource = arrRandomSelect(json.wordGroups[(gData.gameDef[window.gameCurLevel].qGroup)-1], gData.gameDef[window.gameCurLevel].qMax)
+      setAnsBox(wordSource[0].length)
       gFunc()
     });
 }
