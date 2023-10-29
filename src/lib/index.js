@@ -164,7 +164,6 @@ const List = ({ gameList, userData, setAllGamesList, setUserGameList }) => {
     return (
         <div>
             {gameList.map((val, index) => {
-                val.score = [3, 3, 3, 3, 3, 3, 3, 3, 3]
                 return (
                     <div key={index}
                         className='w-100 mb-2 rounded-3 d-flex flex-row-reverse justify-conten-between align-items-center overflow-hidden'
@@ -188,7 +187,6 @@ const List = ({ gameList, userData, setAllGamesList, setUserGameList }) => {
                         </div>
                         {
                             (userData.is_admin) ? <div className='fas fa-close h-100 d-flex align-items-center justify-content-center text-white px-3'
-
                                 style={{
                                     backgroundColor: 'rgba(220,220,220,1)',
                                     fontSize: '1.3rem'
