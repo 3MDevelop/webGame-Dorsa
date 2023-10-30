@@ -1,48 +1,59 @@
-const LogIn = ({ setContentPage }) => {
+const LogIn = ({ setContentPage, setUserTest }) => {
     const [username, setUsername] = React.useState('');
     const [password, setPassword] = React.useState('');
     const [ribbonText, setRibbonText] = React.useState('');
     const [ribbonBack, setRibbonBack] = React.useState('');
 
     const userAuth = (username, password) => {
-        fetch("https://dorsav2.dorsapackage.com/api/v1/verifyCode", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                mobile: username,
-                password: password
-            }),
-        })
-            .then((response) => {
-                if (!response.ok) {
-                    setRibbonBack('bg-danger')
-                    switch (response.status) {
-                        case 400:
-                            setRibbonText('Username Not Valid')
-                            break;
-                        case 404:
-                            setRibbonText('Password not Correct !!')
-                            break;
-                    }
-                    /*  throw new Error(`Request failed with status: ${response.status}`); */
-                }
-                return response.json();
+        if (username == 'test' && password == 'test') {
+            setUserTest(true)
+            setRibbonText('Welcome Tester')
+            setRibbonBack('bg-success')
+            setTimeout(() => {
+                setContentPage('profile');
+            }, 300);
+        } else {
+            console.info('user')
+            fetch("https://dorsav2.dorsapackage.com/api/v1/verifyCode", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    mobile: username,
+                    password: password
+                }),
             })
-            .then((responseData) => {
-                if (responseData.success == '') {
-                    setRibbonText(responseData.error)
-                    setRibbonBack('bg-danger')
-                } else {
-                    setRibbonText('Welcome')
-                    setRibbonBack('bg-success')
-                    localStorage.setItem('uT', responseData.data.api_token)
-                    setTimeout(() => {
-                        setContentPage('profile');
-                    }, 300);
-                }
-            });
+                .then((response) => {
+                    if (!response.ok) {
+                        setRibbonBack('bg-danger')
+                        switch (response.status) {
+                            case 400:
+                                setRibbonText('Username Not Valid')
+                                break;
+                            case 404:
+                                setRibbonText('Password not Correct !!')
+                                break;
+                        }
+                        /*  throw new Error(`Request failed with status: ${response.status}`); */
+                    }
+                    return response.json();
+                })
+                .then((responseData) => {
+                    if (responseData.success == '') {
+                        setRibbonText(responseData.error)
+                        setRibbonBack('bg-danger')
+                    } else {
+                        setRibbonText('Welcome')
+                        setRibbonBack('bg-success')
+                        localStorage.setItem('uT', responseData.data.api_token)
+                        setTimeout(() => {
+                            setContentPage('profile');
+                        }, 300);
+                    }
+                });
+        }
+
     };
 
     return (
@@ -198,8 +209,8 @@ const List = ({ gameList, userData, setAllGamesList, setUserGameList }) => {
                                             "Content-Type": "application/json",
                                         },
                                         body: JSON.stringify({
-                                            api_token: localStorage.getItem('uT'),
                                             req: 'removeGame',
+                                            api_token: localStorage.getItem('uT'),
                                             gamePath: val.path
                                         }),
                                     })
@@ -210,7 +221,7 @@ const List = ({ gameList, userData, setAllGamesList, setUserGameList }) => {
                                             return response.json();
                                         })
                                         .then((responseData) => {
-                                            setAllGamesList(responseData.data)
+                                            setAllGamesList(responseData.data);
                                             setUserGameList(responseData.data);
                                         });
                                 }}
@@ -235,7 +246,7 @@ const List = ({ gameList, userData, setAllGamesList, setUserGameList }) => {
     )
 }
 
-const UserProfile = ({ setContentPage, userData, setUserData }) => {
+const UserProfile = ({ setContentPage, userData, setUserData, userTest }) => {
     const [allGamesList, setAllGamesList] = React.useState([]);
     const [userGameList, setUserGameList] = React.useState([]);
     const [selectedIndex, setSelectedIndex] = React.useState(-1);
@@ -262,27 +273,36 @@ const UserProfile = ({ setContentPage, userData, setUserData }) => {
     }
 
     React.useEffect(() => {
-        fetch("https://dorsav2.dorsapackage.com/api/v1/gameList", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                api_token: localStorage.getItem('uT'),
-                req: 'gList'
-            }),
-        })
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error(`Request failed with status: ${response.status}`);
-                }
-                return response.json();
+        if (userTest) {
+            fetch("./games/gamesList.json")
+                .then((response) => response.json())
+                .then((data) => {
+                    setAllGamesList(data)
+                    setUserGameList(data);
+                });
+        } else {
+            fetch("https://dorsav2.dorsapackage.com/api/v1/gameList", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    api_token: localStorage.getItem('uT'),
+                    req: 'gList'
+                }),
             })
-            .then((responseData) => {
-                setUserData(responseData.data)
-                setAllGamesList(responseData.data.dataGame)
-                setUserGameList(responseData.data.dataGame);
-            });
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error(`Request failed with status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then((responseData) => {
+                    setUserData(responseData.data)
+                    setAllGamesList(responseData.data.dataGame)
+                    setUserGameList(responseData.data.dataGame);
+                });
+        }
     }, []);
 
     return (
@@ -330,6 +350,7 @@ const UserProfile = ({ setContentPage, userData, setUserData }) => {
 const MainContainer = () => {
     const [contentPage, setContentPage] = React.useState('login');
     const [userData, setUserData] = React.useState('');
+    const [userTest, setUserTest] = React.useState(false);
 
     React.useEffect(() => {
         if (localStorage.getItem('uT') != null) {
@@ -339,8 +360,8 @@ const MainContainer = () => {
 
     return (
         <div className={`widthChecker d-flex flex-column align-items-center ${(contentPage != 'login') ? 'userProfile py-3' : 'login py-2'}`}>
-            {(contentPage == 'login') ? <LogIn setContentPage={setContentPage} setUserData={setUserData} /> : null}
-            {(contentPage == 'profile') ? <UserProfile setContentPage={setContentPage} setUserData={setUserData} userData={userData} /> : null}
+            {(contentPage == 'login') ? <LogIn setContentPage={setContentPage} setUserData={setUserData} setUserTest={setUserTest} /> : null}
+            {(contentPage == 'profile') ? <UserProfile setContentPage={setContentPage} setUserData={setUserData} userData={userData} userTest={userTest} /> : null}
         </div>
     );
 };
