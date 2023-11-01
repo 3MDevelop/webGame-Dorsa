@@ -87,6 +87,28 @@ function setScore(inNum) {
             }
             localStorage.setItem(window.location.pathname.split('/')[2], JSON.stringify(userStArr));
 
+
+            fetch("https://dorsav2.dorsapackage.com/api/v1/updateScore", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                api_token: localStorage.getItem('uT'),
+                req: 'updateScore',
+                gamePath: window.location.pathname.split('/')[2],
+                score: userStArr
+              }),
+            })
+              .then((response) => {
+                if (!response.ok) {
+                  throw new Error(`Request failed with status: ${response.status}`);
+                }
+                return response.json();
+              })
+              .then((scoreUpdateResponse) => {
+                console.info(scoreUpdateResponse)
+              });
             break;
         }
       }
@@ -716,13 +738,16 @@ fetch("data.json")
   .then(response => response.json())
   .then(json => {
     gData = json;
-    const storedData = localStorage.getItem(window.location.pathname.split('/')[2]);
+    const storedData = JSON.parse(localStorage.getItem(window.location.pathname.split('/')[2]));
     if (storedData) {
-      userStArr = JSON.parse(storedData)
+      userStArr = storedData.map((element) => {
+        return typeof element === "string" ? +element : element;
+      });
       ReactDOM.render(
         <App />,
         document.getElementById('root')
       );
+      localStorage.removeItem(window.location.pathname.split('/')[2])
     } else {
       console.log('user data not loadded')
     }

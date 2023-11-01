@@ -13,7 +13,6 @@ const LogIn = ({ setContentPage, setUserTest }) => {
                 setContentPage('profile');
             }, 300);
         } else {
-            console.info('user')
             fetch("https://dorsav2.dorsapackage.com/api/v1/verifyCode", {
                 method: "POST",
                 headers: {
@@ -170,11 +169,11 @@ const AdminPanel = ({ hooshItems, setAllGamesList, setUserGameList }) => {
     )
 }
 
-const List = ({ gameList, userData, setAllGamesList, setUserGameList }) => {
+const List = ({ userGameList, userData, setAllGamesList, setUserGameList }) => {
     const levelColor = ["#31ad76", "#95bf3d", "#0abbc5", "#C35BA2", "#D480B3", "#F173AC", "#E95752", "#F58220", "#FBAE49"]
     return (
         <div>
-            {gameList.map((val, index) => {
+            {userGameList.map((val, index) => {
                 return (
                     <div key={index}
                         className='w-100 mb-2 rounded-3 d-flex flex-row-reverse justify-conten-between align-items-center overflow-hidden'
@@ -197,21 +196,22 @@ const List = ({ gameList, userData, setAllGamesList, setUserGameList }) => {
                             </div>
                         </div>
                         {
-                            (userData.is_admin) ? <div className='fas fa-close h-100 d-flex align-items-center justify-content-center text-white px-3'
+                            (userData.is_admin) ? <div className='fas fa-undo h-100 d-flex align-items-center justify-content-center text-white px-3'
                                 style={{
                                     backgroundColor: 'rgba(220,220,220,1)',
                                     fontSize: '1.3rem'
                                 }}
                                 onClick={() => {
-                                    fetch("https://dorsav2.dorsapackage.com/api/v1/removeGame", {
+                                    fetch("https://dorsav2.dorsapackage.com/api/v1/updateScore", {
                                         method: "POST",
                                         headers: {
                                             "Content-Type": "application/json",
                                         },
                                         body: JSON.stringify({
-                                            req: 'removeGame',
                                             api_token: localStorage.getItem('uT'),
-                                            gamePath: val.path
+                                            req: 'updateScore',
+                                            gamePath: val.path,
+                                            score: [0]
                                         }),
                                     })
                                         .then((response) => {
@@ -220,10 +220,33 @@ const List = ({ gameList, userData, setAllGamesList, setUserGameList }) => {
                                             }
                                             return response.json();
                                         })
-                                        .then((responseData) => {
-                                            setAllGamesList(responseData.data);
-                                            setUserGameList(responseData.data);
+                                        .then((scoreUpdateResponse) => {
+                                            console.info(userGameList)
+                                            setAllGamesList(userGameList);
+                                            setUserGameList(userGameList);
                                         });
+
+                                    /* fetch("https://dorsav2.dorsapackage.com/api/v1/removeGame", {
+                                         method: "POST",
+                                         headers: {
+                                             "Content-Type": "application/json",
+                                         },
+                                         body: JSON.stringify({
+                                             req: 'removeGame',
+                                             api_token: localStorage.getItem('uT'),
+                                             gamePath: val.path
+                                         }),
+                                     })
+                                         .then((response) => {
+                                             if (!response.ok) {
+                                                 throw new Error(`Request failed with status: ${response.status}`);
+                                             }
+                                             return response.json();
+                                         })
+                                         .then((responseData) => {
+                                             setAllGamesList(responseData.data);
+                                             setUserGameList(responseData.data);
+                                         });*/
                                 }}
                             /> : null
                         }
@@ -277,8 +300,9 @@ const UserProfile = ({ setContentPage, userData, setUserData, userTest }) => {
             fetch("./games/gamesList.json")
                 .then((response) => response.json())
                 .then((data) => {
-                    setAllGamesList(data)
-                    setUserGameList(data);
+                    setUserData(data)
+                    setAllGamesList(data.dataGame)
+                    setUserGameList(data.dataGame);
                 });
         } else {
             fetch("https://dorsav2.dorsapackage.com/api/v1/gameList", {
@@ -308,9 +332,9 @@ const UserProfile = ({ setContentPage, userData, setUserData, userTest }) => {
     return (
         <div className='container-fluid p-0 m-0 w-100 h-100 d-flex flex-row-reverse'>
             <div id='profileSidebar' className='col-3 h-100 d-flex flex-column justify-content-between align-items-center py-2 overflow-hidden'>
-                {/* <img src={userImage} style={{ borderRadius: '50%' }} width='50%' className='mt-3 border border-2 border-info' /> */}
-                <img src={userData.userImage} style={{ borderRadius: '50%' }} width='50%' className='mt-3 border border-2 border-info' />
-                {/* <div className='mt-3 mb-4 w-100 text-center userName overflow-hidden'>{userName} {userFamily}</div> */}
+                <div style={{ borderRadius: '50%', aspectRatio: '1/1' }} className='mt-3 border border-2 bg-info border-info w-50 overflow-hidden'>
+                    <img src={userData.userImage} width='100%' />
+                </div>
                 <div className='mt-3 mb-4 w-100 text-center userName overflow-hidden'>{userData.name} {userData.family}</div>
                 <div className='w-100 border-info border-1 border-top border-bottom py-2 mt-auto' style={{ backgroundColor: 'rgba(255,255,255,0.2)' }}>
                     {
@@ -324,6 +348,8 @@ const UserProfile = ({ setContentPage, userData, setUserData, userTest }) => {
                 <div className="mt-3 px-3 text-muted w-100 d-flex">
                     <div className='fas fa-sign-out settingIcons me-3' onClick={() => {
                         localStorage.clear()
+                        setAllGamesList([])
+                        setUserGameList([]);
                         setContentPage('login')
                     }} />
                     {
@@ -338,7 +364,13 @@ const UserProfile = ({ setContentPage, userData, setUserData, userTest }) => {
                     {(showAdminConfig) ? <AdminPanel hooshItems={hooshItems} setAllGamesList={setAllGamesList} setUserGameList={setUserGameList} /> : null}
                     <div className='flex-fill p-2 text-end' style={{ overflowY: 'auto' }}>
                         {
-                            (userGameList.length != 0) ? <List gameList={userGameList} setUserGameList={setUserGameList} setAllGamesList={setAllGamesList} userData={userData} /> : null
+                            (userGameList.length != 0) ?
+                                <List
+                                    userGameList={userGameList}
+                                    setUserGameList={setUserGameList}
+                                    setAllGamesList={setAllGamesList}
+                                    userData={userData} />
+                                : null
                         }
                     </div>
                 </div>
