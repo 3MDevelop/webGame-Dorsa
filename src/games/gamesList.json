@@ -79,14 +79,14 @@
       "score": [0, 0, 0, 0, 0, 0, 0, 0, 0]
     },
     {
-      "name": "یازده",
-      "path": "11",
+      "name": "جمع اعداد",
+      "path": "sumOfNmbers",
       "gameType": 1,
       "score": [0, 0, 0, 0, 0, 0, 0, 0, 0]
     },
     {
-      "name": "بیست",
-      "path": "20",
+      "name": "توالی اعداد",
+      "path": "sequenceOfNumbers",
       "gameType": 1,
       "score": [0, 0, 0, 0, 0, 0, 0, 0, 0]
     },

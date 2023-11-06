@@ -104,8 +104,9 @@ fetch("./games/gamesList.json")
   .then((response) => response.json())
   .then((data) => {
     allGameData = data
+    console.info(allGameData)
     ReactDOM.render(
-      <GameList list={data} />,
+      <GameList list={data.dataGame} />,
       document.getElementById('root')
     );
   });

@@ -202,7 +202,7 @@ const List = ({ userGameList, userData, setAllGamesList, setUserGameList }) => {
                                     fontSize: '1.3rem'
                                 }}
                                 onClick={() => {
-                                    fetch("https://dorsav2.dorsapackage.com/api/v1/updateScore", {
+                                   /* fetch("https://dorsav2.dorsapackage.com/api/v1/updateScore", {
                                         method: "POST",
                                         headers: {
                                             "Content-Type": "application/json",
@@ -224,9 +224,9 @@ const List = ({ userGameList, userData, setAllGamesList, setUserGameList }) => {
                                             console.info(userGameList)
                                             setAllGamesList(userGameList);
                                             setUserGameList(userGameList);
-                                        });
+                                        });*/
 
-                                    /* fetch("https://dorsav2.dorsapackage.com/api/v1/removeGame", {
+                                 fetch("https://dorsav2.dorsapackage.com/api/v1/removeGame", {
                                          method: "POST",
                                          headers: {
                                              "Content-Type": "application/json",
@@ -246,7 +246,7 @@ const List = ({ userGameList, userData, setAllGamesList, setUserGameList }) => {
                                          .then((responseData) => {
                                              setAllGamesList(responseData.data);
                                              setUserGameList(responseData.data);
-                                         });*/
+                                         });
                                 }}
                             /> : null
                         }
