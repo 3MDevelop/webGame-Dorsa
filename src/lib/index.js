@@ -196,36 +196,12 @@ const List = ({ userGameList, userData, setAllGamesList, setUserGameList }) => {
                             </div>
                         </div>
                         {
-                            (userData.is_admin) ? <div className='fas fa-undo h-100 d-flex align-items-center justify-content-center text-white px-3'
+                            (userData.is_admin) ? <div className='fas fa-remove h-100 d-flex align-items-center justify-content-center text-white px-3'
                                 style={{
                                     backgroundColor: 'rgba(220,220,220,1)',
                                     fontSize: '1.3rem'
                                 }}
                                 onClick={() => {
-                                   /* fetch("https://dorsav2.dorsapackage.com/api/v1/updateScore", {
-                                        method: "POST",
-                                        headers: {
-                                            "Content-Type": "application/json",
-                                        },
-                                        body: JSON.stringify({
-                                            api_token: localStorage.getItem('uT'),
-                                            req: 'updateScore',
-                                            gamePath: val.path,
-                                            score: [0]
-                                        }),
-                                    })
-                                        .then((response) => {
-                                            if (!response.ok) {
-                                                throw new Error(`Request failed with status: ${response.status}`);
-                                            }
-                                            return response.json();
-                                        })
-                                        .then((scoreUpdateResponse) => {
-                                            console.info(userGameList)
-                                            setAllGamesList(userGameList);
-                                            setUserGameList(userGameList);
-                                        });*/
-
                                  fetch("https://dorsav2.dorsapackage.com/api/v1/removeGame", {
                                          method: "POST",
                                          headers: {
@@ -250,6 +226,42 @@ const List = ({ userGameList, userData, setAllGamesList, setUserGameList }) => {
                                 }}
                             /> : null
                         }
+
+                        {
+                            (userData.is_admin) ? <div className='fas fa-undo h-100 d-flex align-items-center justify-content-center text-white px-3'
+                                style={{
+                                    backgroundColor: 'rgba(220,220,220,1)',
+                                    fontSize: '1.3rem'
+                                }}
+                                onClick={() => {
+                                   fetch("https://dorsav2.dorsapackage.com/api/v1/updateScore", {
+                                        method: "POST",
+                                        headers: {
+                                            "Content-Type": "application/json",
+                                        },
+                                        body: JSON.stringify({
+                                            api_token: localStorage.getItem('uT'),
+                                            req: 'updateScore',
+                                            gamePath: val.path,
+                                            score: [0]
+                                        }),
+                                    })
+                                        .then((response) => {
+                                            if (!response.ok) {
+                                                throw new Error(`Request failed with status: ${response.status}`);
+                                            }
+                                            return response.json();
+                                        })
+                                        .then((scoreUpdateResponse) => {
+                                            console.info(userGameList)
+                                            setAllGamesList(userGameList);
+                                            setUserGameList(userGameList);
+                                        });
+                                }}
+                            /> : null
+                        }
+
+
                         <div
                             className='fas fa-play h-100 d-flex align-items-center justify-content-center text-white px-3'
                             style={{
