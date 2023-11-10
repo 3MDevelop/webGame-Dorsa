@@ -18,64 +18,64 @@
       "gameTime": 90,
       "qMax": 25,
       "starArr": [50, 115, 180],
-      "passStar": 3,
+      "passStar": 1,
       "colorMax": 4
     },
     {
       "gameTime": 90,
       "qMax": 25,
       "starArr": [50, 115, 180],
-      "passStar": 3,
+      "passStar": 1,
       "colorMax": 4
     },
     {
       "gameTime": 90,
       "qMax": 25,
       "starArr": [50, 115, 180],
-      "passStar": 3,
+      "passStar": 1,
       "colorMax": 4
     },
     {
       "gameTime": 90,
       "qMax": 25,
-      "starArr": [50, 115, 180],
-      "passStar": 3,
+      "starArr": [40, 105, 170],
+      "passStar": 1,
       "colorMax": 5
     },
     {
       "gameTime": 90,
       "qMax": 25,
-      "starArr": [50, 115, 180],
-      "passStar": 3,
+      "starArr": [40, 105, 170],
+      "passStar": 1,
       "colorMax": 5
     },
     {
       "gameTime": 90,
       "qMax": 25,
-      "starArr": [50, 115, 180],
-      "passStar": 3,
+      "starArr": [40, 105, 170],
+      "passStar": 1,
       "colorMax": 5
     },
     {
       "gameTime": 90,
       "qMax": 25,
-      "starArr": [50, 115, 180],
-      "passStar": 3,
-      "colorMax": 7
+      "starArr": [30, 95, 160],
+      "passStar": 1,
+      "colorMax": 6
     },
     {
       "gameTime": 90,
       "qMax": 25,
-      "starArr": [50, 115, 180],
-      "passStar": 3,
-      "colorMax": 7
+      "starArr": [30, 95, 160],
+      "passStar": 1,
+      "colorMax": 6
     },
     {
       "gameTime": 90,
       "qMax": 25,
-      "starArr": [50, 115, 180],
-      "passStar": 3,
-      "colorMax": 7
+      "starArr": [30, 95, 160],
+      "passStar": 1,
+      "colorMax": 6
     }
   ]
 }

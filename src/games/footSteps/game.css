@@ -53,6 +53,7 @@
   font-size: 3rem;
   font-weight: bolder;
   padding-left: 0.3rem;
+  text-shadow: -2px -2px 0 rgba(255, 255, 255, 0.75), 2px -2px 0 rgba(255, 255, 255, 0.75), -2px 2px 0 rgba(255, 255, 255, 0.75), 2px 2px 0 rgba(255, 255, 255, 0.75);
 }
 
 .boxBack {

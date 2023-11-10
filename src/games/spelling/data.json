@@ -6,66 +6,66 @@
   "gameDef": [
     {
       "gameTime": 90,
-      "qMax": 25,
-      "starArr": [18, 20, 22],
-      "passStar": 3,
+      "qMax": 50,
+      "starArr": [41, 43, 45],
+      "passStar": 1,
       "qGroup":1
     },
     {
       "gameTime": 90,
-      "qMax": 25,
-      "starArr": [18, 20, 22],
-      "passStar": 3,
+      "qMax": 50,
+      "starArr": [43, 45, 47],
+      "passStar": 1,
       "qGroup":1
     },
     {
       "gameTime": 90,
-      "qMax": 25,
-      "starArr": [18, 20, 22],
-      "passStar": 3,
+      "qMax": 50,
+      "starArr": [45, 47, 49],
+      "passStar": 1,
       "qGroup":1
     },
     {
       "gameTime": 90,
-      "qMax": 25,
-      "starArr": [18, 20, 22],
-      "passStar": 3,
-      "qGroup":1
+      "qMax": 50,
+      "starArr": [41, 43, 45],
+      "passStar": 1,
+      "qGroup":2
     },
     {
       "gameTime": 90,
-      "qMax": 25,
-      "starArr": [18, 20, 22],
-      "passStar": 3,
-      "qGroup":1
+      "qMax": 50,
+      "starArr": [43, 45, 47],
+      "passStar": 1,
+      "qGroup":2
     },
     {
       "gameTime": 90,
-      "qMax": 25,
-      "starArr": [18, 20, 22],
-      "passStar": 3,
-      "qGroup":1
+      "qMax": 50,
+      "starArr": [45, 47, 49],
+      "passStar": 1,
+      "qGroup":2
     },
     {
       "gameTime": 90,
-      "qMax": 25,
-      "starArr": [18, 20, 22],
-      "passStar": 3,
-      "qGroup":1
+      "qMax": 50,
+      "starArr": [41, 43, 45],
+      "passStar": 1,
+      "qGroup":2
     },
     {
       "gameTime": 90,
-      "qMax": 25,
-      "starArr": [18, 20, 22],
-      "passStar": 3,
-      "qGroup":1
+      "qMax": 50,
+      "starArr": [43, 45, 47],
+      "passStar": 1,
+      "qGroup":2
     },
     {
       "gameTime": 90,
-      "qMax": 25,
-      "starArr": [18, 20, 22],
-      "passStar": 3,
-      "qGroup":1
+      "qMax": 50,
+      "starArr": [45, 47, 49],
+      "passStar": 1,
+      "qGroup":2
     }
   ]
 }

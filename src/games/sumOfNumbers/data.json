@@ -9,73 +9,73 @@
       "gameTime": 90,
       "qMax": 50,
       "nextTime": 15,
-      "starArr": [24, 27, 30],
-      "passStar": 3,
+      "starArr": [24,27,30],
+      "passStar": 1,
       "sumVal": 10
     },
     {
       "gameTime": 90,
       "qMax": 50,
       "nextTime": 15,
-      "starArr": [24, 27, 30],
-      "passStar": 3,
-      "sumVal": 11
+      "starArr": [27,30,33],
+      "passStar": 1,
+      "sumVal": 10
     },
     {
       "gameTime": 90,
       "qMax": 50,
       "nextTime": 15,
-      "starArr": [24, 27, 30],
-      "passStar": 3,
-      "sumVal": 12
+      "starArr": [30,33,36],
+      "passStar": 1,
+      "sumVal": 10
     },
     {
       "gameTime": 90,
       "qMax": 50,
       "nextTime": 15,
-      "starArr": [24, 27, 30],
-      "passStar": 3,
+      "starArr": [24,27,30],
+      "passStar": 1,
       "sumVal": 13
     },
     {
       "gameTime": 90,
       "qMax": 50,
       "nextTime": 15,
-      "starArr": [24, 27, 30],
-      "passStar": 3,
-      "sumVal": 14
+      "starArr": [27,30,33],
+      "passStar": 1,
+      "sumVal": 13
     },
     {
       "gameTime": 90,
       "qMax": 50,
       "nextTime": 15,
-      "starArr": [24, 27, 30],
-      "passStar": 3,
+      "starArr": [30,33,36],
+      "passStar": 1,
+      "sumVal": 13
+    },
+    {
+      "gameTime": 90,
+      "qMax": 50,
+      "nextTime": 15,
+      "starArr": [24,27,30],
+      "passStar": 1,
       "sumVal": 15
     },
     {
       "gameTime": 90,
       "qMax": 50,
       "nextTime": 15,
-      "starArr": [24, 27, 30],
-      "passStar": 3,
-      "sumVal": 16
+      "starArr": [27,30,33],
+      "passStar": 1,
+      "sumVal": 15
     },
     {
       "gameTime": 90,
       "qMax": 50,
       "nextTime": 15,
-      "starArr": [24, 27, 30],
-      "passStar": 3,
-      "sumVal": 17
-    },
-    {
-      "gameTime": 90,
-      "qMax": 50,
-      "nextTime": 15,
-      "starArr": [24, 27, 30],
-      "passStar": 3,
-      "sumVal": 18
+      "starArr": [30,33,36],
+      "passStar": 1,
+      "sumVal": 15
     }
   ]
 }
