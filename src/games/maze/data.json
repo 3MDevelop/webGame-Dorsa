@@ -8,11 +8,100 @@
       "gameTime": 90000,
       "qMax": 14,
       "starArr": [7, 9, 11],
-      "passStar": 3,
+      "passStar": 1,
       "cellXCount": 5,
       "cellYCount": 2,
-      "xStepLimit":[2,4],
-      "boxDelay": 500
+      "xStepLimit": [2, 4],
+      "boxDelay": 500,
+      "errCount": 3
+    },
+    {
+      "gameTime": 90000,
+      "qMax": 14,
+      "starArr": [7, 9, 11],
+      "passStar": 1,
+      "cellXCount": 5,
+      "cellYCount": 2,
+      "xStepLimit": [2, 4],
+      "boxDelay": 500,
+      "errCount": 3
+    },
+    {
+      "gameTime": 90000,
+      "qMax": 14,
+      "starArr": [7, 9, 11],
+      "passStar": 1,
+      "cellXCount": 5,
+      "cellYCount": 2,
+      "xStepLimit": [2, 4],
+      "boxDelay": 500,
+      "errCount": 3
+    },
+    {
+      "gameTime": 90000,
+      "qMax": 14,
+      "starArr": [7, 9, 11],
+      "passStar": 1,
+      "cellXCount": 5,
+      "cellYCount": 2,
+      "xStepLimit": [2, 4],
+      "boxDelay": 500,
+      "errCount": 3
+    },
+    {
+      "gameTime": 90000,
+      "qMax": 14,
+      "starArr": [7, 9, 11],
+      "passStar": 1,
+      "cellXCount": 5,
+      "cellYCount": 2,
+      "xStepLimit": [2, 4],
+      "boxDelay": 500,
+      "errCount": 3
+    },
+    {
+      "gameTime": 90000,
+      "qMax": 14,
+      "starArr": [7, 9, 11],
+      "passStar": 1,
+      "cellXCount": 5,
+      "cellYCount": 2,
+      "xStepLimit": [2, 4],
+      "boxDelay": 500,
+      "errCount": 3
+    },
+    {
+      "gameTime": 90000,
+      "qMax": 14,
+      "starArr": [7, 9, 11],
+      "passStar": 1,
+      "cellXCount": 5,
+      "cellYCount": 2,
+      "xStepLimit": [2, 4],
+      "boxDelay": 500,
+      "errCount": 3
+    },
+    {
+      "gameTime": 90000,
+      "qMax": 14,
+      "starArr": [7, 9, 11],
+      "passStar": 1,
+      "cellXCount": 5,
+      "cellYCount": 2,
+      "xStepLimit": [2, 4],
+      "boxDelay": 500,
+      "errCount": 3
+    },
+    {
+      "gameTime": 90000,
+      "qMax": 14,
+      "starArr": [7, 9, 11],
+      "passStar": 1,
+      "cellXCount": 5,
+      "cellYCount": 2,
+      "xStepLimit": [2, 4],
+      "boxDelay": 500,
+      "errCount": 3
     }
   ]
 }
