@@ -80,7 +80,7 @@
     },
     {
       "name": "جمع اعداد",
-      "path": "sumOfNmbers",
+      "path": "sumOfNumbers",
       "gameType": 1,
       "score": [0, 0, 0, 0, 0, 0, 0, 0, 0]
     },

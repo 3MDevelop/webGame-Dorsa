@@ -329,6 +329,8 @@ const UserProfile = ({ setContentPage, userData, setUserData, userTest }) => {
             })
                 .then((response) => {
                     if (!response.ok) {
+                        localStorage.clear()
+                        setContentPage('login')
                         throw new Error(`Request failed with status: ${response.status}`);
                     }
                     return response.json();
