@@ -10,33 +10,6 @@
       "starArr": [41, 43, 45],
       "passStar": 1,
       "wordGroup": 1,
-      "cellCount":12,
-      "questionTime": 1000
-    },
-    {
-      "gameTime": 90,
-      "qMax": 50,
-      "starArr": [43, 45, 47],
-      "passStar": 1,
-      "wordGroup": 1,
-      "cellCount":12,
-      "questionTime": 1000
-    },
-    {
-      "gameTime": 90,
-      "qMax": 50,
-      "starArr": [45, 47, 49],
-      "passStar": 1,
-      "wordGroup": 1,
-      "cellCount":12,
-      "questionTime": 1000
-    },
-    {
-      "gameTime": 90,
-      "qMax": 50,
-      "starArr": [41, 43, 45],
-      "passStar": 1,
-      "wordGroup": 1,
       "cellCount":16,
       "questionTime": 1000
     },
@@ -64,7 +37,7 @@
       "starArr": [41, 43, 45],
       "passStar": 1,
       "wordGroup": 1,
-      "cellCount":20,
+      "cellCount":25,
       "questionTime": 1000
     },
     {
@@ -73,7 +46,7 @@
       "starArr": [43, 45, 47],
       "passStar": 1,
       "wordGroup": 1,
-      "cellCount":20,
+      "cellCount":25,
       "questionTime": 1000
     },
     {
@@ -82,7 +55,34 @@
       "starArr": [45, 47, 49],
       "passStar": 1,
       "wordGroup": 1,
-      "cellCount":20,
+      "cellCount":25,
+      "questionTime": 1000
+    },
+    {
+      "gameTime": 90,
+      "qMax": 50,
+      "starArr": [41, 43, 45],
+      "passStar": 1,
+      "wordGroup": 1,
+      "cellCount":36,
+      "questionTime": 1000
+    },
+    {
+      "gameTime": 90,
+      "qMax": 50,
+      "starArr": [43, 45, 47],
+      "passStar": 1,
+      "wordGroup": 1,
+      "cellCount":36,
+      "questionTime": 1000
+    },
+    {
+      "gameTime": 90,
+      "qMax": 50,
+      "starArr": [45, 47, 49],
+      "passStar": 1,
+      "wordGroup": 1,
+      "cellCount":36,
       "questionTime": 1000
     }
   ]

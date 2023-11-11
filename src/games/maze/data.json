@@ -5,8 +5,8 @@
   "soundLevel": 0.2,
   "gameDef": [
     {
-      "gameTime": 90000,
-      "qMax": 14,
+      "gameTime": 90,
+      "qMax": 40,
       "starArr": [7, 9, 11],
       "passStar": 1,
       "cellXCount": 5,
@@ -16,8 +16,8 @@
       "errCount": 3
     },
     {
-      "gameTime": 90000,
-      "qMax": 14,
+      "gameTime": 90,
+      "qMax": 40,
       "starArr": [7, 9, 11],
       "passStar": 1,
       "cellXCount": 5,
@@ -27,8 +27,8 @@
       "errCount": 3
     },
     {
-      "gameTime": 90000,
-      "qMax": 14,
+      "gameTime": 90,
+      "qMax": 40,
       "starArr": [7, 9, 11],
       "passStar": 1,
       "cellXCount": 5,
@@ -38,8 +38,8 @@
       "errCount": 3
     },
     {
-      "gameTime": 90000,
-      "qMax": 14,
+      "gameTime": 90,
+      "qMax": 50,
       "starArr": [7, 9, 11],
       "passStar": 1,
       "cellXCount": 5,
@@ -49,8 +49,8 @@
       "errCount": 3
     },
     {
-      "gameTime": 90000,
-      "qMax": 14,
+      "gameTime": 90,
+      "qMax": 50,
       "starArr": [7, 9, 11],
       "passStar": 1,
       "cellXCount": 5,
@@ -60,8 +60,8 @@
       "errCount": 3
     },
     {
-      "gameTime": 90000,
-      "qMax": 14,
+      "gameTime": 90,
+      "qMax": 50,
       "starArr": [7, 9, 11],
       "passStar": 1,
       "cellXCount": 5,
@@ -71,8 +71,8 @@
       "errCount": 3
     },
     {
-      "gameTime": 90000,
-      "qMax": 14,
+      "gameTime": 90,
+      "qMax": 60,
       "starArr": [7, 9, 11],
       "passStar": 1,
       "cellXCount": 5,
@@ -82,8 +82,8 @@
       "errCount": 3
     },
     {
-      "gameTime": 90000,
-      "qMax": 14,
+      "gameTime": 90,
+      "qMax": 60,
       "starArr": [7, 9, 11],
       "passStar": 1,
       "cellXCount": 5,
@@ -93,8 +93,8 @@
       "errCount": 3
     },
     {
-      "gameTime": 90000,
-      "qMax": 14,
+      "gameTime": 90,
+      "qMax": 60,
       "starArr": [7, 9, 11],
       "passStar": 1,
       "cellXCount": 5,

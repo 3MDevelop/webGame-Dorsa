@@ -134,7 +134,7 @@
     },
     {
       "name": "چند روز",
-      "path": "fewdays",
+      "path": "fewDays",
       "gameType": 1,
       "score": [0, 0, 0, 0, 0, 0, 0, 0, 0]
     },
