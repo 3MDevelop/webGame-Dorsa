@@ -9,6 +9,7 @@ let sepInd = new Array()
 let cellCount, ansID, lastItem, uErrCount, limitPass
 
 resetBox = (inVal) => {
+  qMode = false
   if (inVal) {
     setScore(1)
   } else {

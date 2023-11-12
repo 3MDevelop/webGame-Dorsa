@@ -26,7 +26,7 @@
   transition: 0.4s;
   border-radius: 5px;
   padding: 3px;
-  margin: 3px;
+  margin: 5px;
   background-color: #fff;
   /* background-color: rgb(249, 93, 93); */
   /* background-color: rgb(61, 234, 61); */
@@ -104,6 +104,6 @@
   width: 4px;
   border-radius: 10px;
   background-color: rgba(196, 196, 196, 0.3);
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 7px;
+  margin-bottom: 7px;
 }
