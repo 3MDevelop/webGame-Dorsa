@@ -7,100 +7,100 @@
     {
       "gameTime": 90,
       "qMax": 40,
-      "starArr": [7, 9, 11],
+      "starArr": [31, 33, 35],
       "passStar": 1,
       "cellXCount": 5,
-      "cellYCount": 2,
+      "cellYCount": 3,
       "xStepLimit": [2, 4],
-      "boxDelay": 500,
-      "errCount": 3
+      "boxDelay": 1000,
+      "errCount": 2
     },
     {
       "gameTime": 90,
       "qMax": 40,
-      "starArr": [7, 9, 11],
+      "starArr": [33, 35, 37],
       "passStar": 1,
       "cellXCount": 5,
-      "cellYCount": 2,
+      "cellYCount": 3,
       "xStepLimit": [2, 4],
-      "boxDelay": 500,
-      "errCount": 3
+      "boxDelay": 1000,
+      "errCount": 2
     },
     {
       "gameTime": 90,
       "qMax": 40,
-      "starArr": [7, 9, 11],
+      "starArr": [35, 37, 39],
       "passStar": 1,
       "cellXCount": 5,
-      "cellYCount": 2,
+      "cellYCount": 3,
       "xStepLimit": [2, 4],
-      "boxDelay": 500,
-      "errCount": 3
+      "boxDelay": 1000,
+      "errCount": 2
     },
     {
       "gameTime": 90,
       "qMax": 50,
-      "starArr": [7, 9, 11],
+      "starArr": [41, 43, 45],
       "passStar": 1,
       "cellXCount": 5,
-      "cellYCount": 2,
+      "cellYCount": 4,
       "xStepLimit": [2, 4],
-      "boxDelay": 500,
-      "errCount": 3
+      "boxDelay": 1000,
+      "errCount": 2
     },
     {
       "gameTime": 90,
       "qMax": 50,
-      "starArr": [7, 9, 11],
+      "starArr": [43, 45, 47],
       "passStar": 1,
       "cellXCount": 5,
-      "cellYCount": 2,
+      "cellYCount": 4,
       "xStepLimit": [2, 4],
-      "boxDelay": 500,
-      "errCount": 3
+      "boxDelay": 1000,
+      "errCount": 2
     },
     {
       "gameTime": 90,
       "qMax": 50,
-      "starArr": [7, 9, 11],
+      "starArr": [45, 47, 49],
       "passStar": 1,
       "cellXCount": 5,
-      "cellYCount": 2,
+      "cellYCount": 4,
       "xStepLimit": [2, 4],
-      "boxDelay": 500,
+      "boxDelay": 1000,
+      "errCount": 2
+    },
+    {
+      "gameTime": 90,
+      "qMax": 60,
+      "starArr": [51, 53, 55],
+      "passStar": 1,
+      "cellXCount": 6,
+      "cellYCount": 5,
+      "xStepLimit": [2, 4],
+      "boxDelay": 1000,
       "errCount": 3
     },
     {
       "gameTime": 90,
       "qMax": 60,
-      "starArr": [7, 9, 11],
+      "starArr": [53, 55, 57],
       "passStar": 1,
-      "cellXCount": 5,
-      "cellYCount": 2,
+      "cellXCount": 6,
+      "cellYCount": 5,
       "xStepLimit": [2, 4],
-      "boxDelay": 500,
+      "boxDelay": 1000,
       "errCount": 3
     },
     {
       "gameTime": 90,
       "qMax": 60,
-      "starArr": [7, 9, 11],
+      "starArr": [55, 57, 59],
       "passStar": 1,
-      "cellXCount": 5,
-      "cellYCount": 2,
+      "cellXCount": 6,
+      "cellYCount": 5,
       "xStepLimit": [2, 4],
-      "boxDelay": 500,
-      "errCount": 3
-    },
-    {
-      "gameTime": 90,
-      "qMax": 60,
-      "starArr": [7, 9, 11],
-      "passStar": 1,
-      "cellXCount": 5,
-      "cellYCount": 2,
-      "xStepLimit": [2, 4],
-      "boxDelay": 500,
+      "boxDelay": 1000,
       "errCount": 3
     }
   ]
