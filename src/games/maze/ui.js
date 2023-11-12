@@ -26,7 +26,7 @@ const Help = () => {
 const MeshBox = (props) => {
   return (
     <div className="boxContainer " id={"bc" + (props.id)}>
-      <div className="boxBack" id={"d" + (props.id)} onClick={selF(props.id)}>{props.id}</div>
+      <div className="boxBack" id={"d" + (props.id)} onClick={selF(props.id)}>{/* {props.id} */}</div>
     </div>
   )
 }
