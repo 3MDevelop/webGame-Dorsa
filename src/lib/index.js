@@ -286,7 +286,9 @@ const UserProfile = ({ setContentPage, userData, setUserData, userTest }) => {
     const [userGameList, setUserGameList] = React.useState([]);
     const [selectedIndex, setSelectedIndex] = React.useState(-1);
     const [showAdminConfig, setShowAdminConfig] = React.useState(false)
-    const hooshItems = new Array(' منطقی ریاضی', 'دیداری فضایی', 'کلامی', 'موسیقایی', 'بدنی جنبشی', 'درون فردی', 'میان فردی', 'طبیعت گرا')
+    const hooshItems = new Array(' منطقی ریاضی', 'دیداری فضایی', 'کلامی')
+
+    /* , 'موسیقایی', 'بدنی جنبشی', 'درون فردی', 'میان فردی', 'طبیعت گرا' */
 
     const listFilter = (index) => {
         if (selectedIndex == index) {
