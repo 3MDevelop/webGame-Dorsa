@@ -202,27 +202,27 @@ const List = ({ userGameList, userData, setAllGamesList, setUserGameList }) => {
                                     fontSize: '1.3rem'
                                 }}
                                 onClick={() => {
-                                 fetch("https://dorsav2.dorsapackage.com/api/v1/removeGame", {
-                                         method: "POST",
-                                         headers: {
-                                             "Content-Type": "application/json",
-                                         },
-                                         body: JSON.stringify({
-                                             req: 'removeGame',
-                                             api_token: localStorage.getItem('uT'),
-                                             gamePath: val.path
-                                         }),
-                                     })
-                                         .then((response) => {
-                                             if (!response.ok) {
-                                                 throw new Error(`Request failed with status: ${response.status}`);
-                                             }
-                                             return response.json();
-                                         })
-                                         .then((responseData) => {
-                                             setAllGamesList(responseData.data);
-                                             setUserGameList(responseData.data);
-                                         });
+                                    fetch("https://dorsav2.dorsapackage.com/api/v1/removeGame", {
+                                        method: "POST",
+                                        headers: {
+                                            "Content-Type": "application/json",
+                                        },
+                                        body: JSON.stringify({
+                                            req: 'removeGame',
+                                            api_token: localStorage.getItem('uT'),
+                                            gamePath: val.path
+                                        }),
+                                    })
+                                        .then((response) => {
+                                            if (!response.ok) {
+                                                throw new Error(`Request failed with status: ${response.status}`);
+                                            }
+                                            return response.json();
+                                        })
+                                        .then((responseData) => {
+                                            setAllGamesList(responseData.data);
+                                            setUserGameList(responseData.data);
+                                        });
                                 }}
                             /> : null
                         }
@@ -234,7 +234,8 @@ const List = ({ userGameList, userData, setAllGamesList, setUserGameList }) => {
                                     fontSize: '1.3rem'
                                 }}
                                 onClick={() => {
-                                   fetch("https://dorsav2.dorsapackage.com/api/v1/updateScore", {
+
+                                    fetch("https://dorsav2.dorsapackage.com/api/v1/updateScore", {
                                         method: "POST",
                                         headers: {
                                             "Content-Type": "application/json",
@@ -243,6 +244,8 @@ const List = ({ userGameList, userData, setAllGamesList, setUserGameList }) => {
                                             api_token: localStorage.getItem('uT'),
                                             req: 'updateScore',
                                             gamePath: val.path,
+                                            gameLevel: 0,
+                                            gameTime: 0,
                                             score: [0]
                                         }),
                                     })
@@ -253,10 +256,8 @@ const List = ({ userGameList, userData, setAllGamesList, setUserGameList }) => {
                                             return response.json();
                                         })
                                         .then((scoreUpdateResponse) => {
-                                            console.info(userGameList)
-                                            setAllGamesList(userGameList);
-                                            setUserGameList(userGameList);
-                                        });
+                                            console.info(scoreUpdateResponse)
+                                        });                                   
                                 }}
                             /> : null
                         }

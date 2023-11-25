@@ -86,10 +86,10 @@ function setScore(inNum) {
             }
             localStorage.setItem(window.location.pathname.split('/')[2], JSON.stringify(userStArr));
             fetch("https://dorsav2.dorsapackage.com/api/v1/updateScore", {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
+                                        method: "POST",
+                                        headers: {
+                                            "Content-Type": "application/json",
+                                        },
               body: JSON.stringify({
                 api_token: localStorage.getItem('uT'),
                 req: 'updateScore',
