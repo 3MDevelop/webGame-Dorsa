@@ -171,6 +171,19 @@ const AdminPanel = ({ hooshItems, setAllGamesList, setUserGameList }) => {
 
 const List = ({ userGameList, userData, setAllGamesList, setUserGameList }) => {
     const levelColor = ["#31ad76", "#95bf3d", "#0abbc5", "#C35BA2", "#D480B3", "#F173AC", "#E95752", "#F58220", "#FBAE49"]
+
+    /* fetch("https://dorsav2.dorsapackage.com/api/v1/removeGame", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            req: 'removeGame',
+            api_token: localStorage.getItem('uT'),
+            gamePath: 'sumOfNumbers'
+        }),
+    }) */
+
     return (
         <div>
             {userGameList.map((val, index) => {
@@ -257,7 +270,7 @@ const List = ({ userGameList, userData, setAllGamesList, setUserGameList }) => {
                                         })
                                         .then((scoreUpdateResponse) => {
                                             console.info(scoreUpdateResponse)
-                                        });                                   
+                                        });
                                 }}
                             /> : null
                         }
@@ -339,6 +352,7 @@ const UserProfile = ({ setContentPage, userData, setUserData, userTest }) => {
                     return response.json();
                 })
                 .then((responseData) => {
+                    console.info(responseData)
                     setUserData(responseData.data)
                     setAllGamesList(responseData.data.dataGame)
                     setUserGameList(responseData.data.dataGame);

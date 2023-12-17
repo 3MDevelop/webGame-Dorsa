@@ -55,24 +55,6 @@
       "score": [0, 0, 0, 0, 0, 0, 0, 0, 0]
     },
     {
-      "name": "پازل سیاه و سفید",
-      "path": "bwPuzzle",
-      "gameType": 8,
-      "score": [0, 0, 0, 0, 0, 0, 0, 0, 0]
-    },
-    {
-      "name": "کشتی",
-      "path": "ship",
-      "gameType": 8,
-      "score": [0, 0, 0, 0, 0, 0, 0, 0, 0]
-    },
-    {
-      "name": "جدول اعداد",
-      "path": "tableOfNumber",
-      "gameType": 8,
-      "score": [0, 0, 0, 0, 0, 0, 0, 0, 0]
-    },
-    {
       "name": "محاسبه سریع",
       "path": "fastCalculation",
       "gameType": 1,

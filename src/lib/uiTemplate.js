@@ -77,19 +77,22 @@ function setScore(inNum) {
             document.getElementsByClassName('rStar')[0].style.color = "red"
             userStArr[gameCurLevel] = userStArr[gameCurLevel] + 1
             if (userStArr[gameCurLevel] == gData.gameDef[gameCurLevel].passStar) {
-              gameCurLevel++
-              userStArr.push(0)
+              if (gameCurLevel < 9) {
+                gameCurLevel++
+                userStArr.push(0)
+              }
               gameEndFunc()
               setGameData(gameCurLevel)
             } else {
               gameEndFunc()
             }
             localStorage.setItem(window.location.pathname.split('/')[2], JSON.stringify(userStArr));
+            console.info('level = ', gameCurLevel)
             fetch("https://dorsav2.dorsapackage.com/api/v1/updateScore", {
-                                        method: "POST",
-                                        headers: {
-                                            "Content-Type": "application/json",
-                                        },
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
               body: JSON.stringify({
                 api_token: localStorage.getItem('uT'),
                 req: 'updateScore',
@@ -731,6 +734,7 @@ const App = () => {
 }
 
 let gData;
+let gDataDef = new Array();
 let userStArr;
 
 fetch("data.json")
@@ -738,15 +742,22 @@ fetch("data.json")
   .then(json => {
     gData = json;
     const storedData = JSON.parse(localStorage.getItem(window.location.pathname.split('/')[2]));
+    console.info(gData.userGrade)
+    let usergrade = 1
+    gData.userGrade[usergrade - 1].map((val) => {
+      gDataDef.push(gData.gameDef[val - 1])
+    })
+    console.info(gDataDef)
     if (storedData) {
       userStArr = storedData.map((element) => {
         return typeof element === "string" ? +element : element;
       });
+      console.info(userStArr)
       ReactDOM.render(
         <App />,
         document.getElementById('root')
       );
-      localStorage.removeItem(window.location.pathname.split('/')[2])
+      /* localStorage.removeItem(window.location.pathname.split('/')[2]) */
     } else {
       console.log('user data not loadded')
     }
