@@ -76,18 +76,15 @@ function setScore(inNum) {
             getGoal = true
             document.getElementsByClassName('rStar')[0].style.color = "red"
             userStArr[gameCurLevel] = userStArr[gameCurLevel] + 1
-            if (userStArr[gameCurLevel] == gData.gameDef[gameCurLevel].passStar) {
-              if (gameCurLevel < 9) {
-                gameCurLevel++
-                userStArr.push(0)
-              }
-              gameEndFunc()
+            let apiLevel = gameCurLevel
+            let apiTime = curTime
+            if (userStArr[gameCurLevel] == gData.gameDef[gameCurLevel].passStar && userStArr.length < 9) {
+              gameCurLevel++
+              userStArr.push(0)
               setGameData(gameCurLevel)
-            } else {
-              gameEndFunc()
             }
             localStorage.setItem(window.location.pathname.split('/')[2], JSON.stringify(userStArr));
-            console.info('level = ', gameCurLevel)
+            gameEndFunc()
             fetch("https://dorsav2.dorsapackage.com/api/v1/updateScore", {
               method: "POST",
               headers: {
@@ -97,8 +94,8 @@ function setScore(inNum) {
                 api_token: localStorage.getItem('uT'),
                 req: 'updateScore',
                 gamePath: window.location.pathname.split('/')[2],
-                gameLevel: gameCurLevel,
-                gameTime: curTime,
+                gameLevel: apiLevel,
+                gameTime: apiTime,
                 score: userStArr
               }),
             })
